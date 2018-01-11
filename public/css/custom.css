@@ -1,0 +1,374 @@
+/*
+    DEMO STYLE
+*/
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #F5F5F5;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+
+a, a:hover, a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 0;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+.navbar-collapse.collapse {
+    display: block;
+}
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+ul.navbar-nav > li.menus{
+    margin-bottom: 7px;
+    margin-top: 7px;
+    margin-left: 2px;
+    margin-right: 2px;
+    border: 1px solid #a67c00;
+}
+
+ul.navbar-nav > li.menus > a:hover{
+    /*background: #7386D5;*/
+    color: #a67c00;
+}
+.nav > li > a {
+    padding: 6px 15px;
+}
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+#sidebar {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+    background: #bf9b30;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #bf9b30;
+}
+
+#sidebar ul.components {
+    padding: 10px 20px 20px 20px;
+    border-bottom: 1px solid #a67c00;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 6px 10px;
+    font-size: 1.1em;
+    display: block;
+}
+#sidebar ul li a:hover {
+    color: #fff;
+    background: #000;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+    color: #fff;
+    background: #000;
+}
+
+.social ul {
+    color: #fff;
+    list-style: none;
+    margin: 0;
+    padding: 8px !important;
+    text-align: center;
+}
+.social li {
+    display: inline-block;
+}
+
+.social a {
+    width: 37px;
+    border-radius: 50%;
+    background: black;
+    margin: 2px;
+    padding: 5px;
+    opacity: 0.5;
+    transition: all 0.2s ease;
+}
+.social a:hover {
+    opacity: 1;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
+    content: '\e259';
+    display: block;
+    position: absolute;
+    right: 20px;
+    font-family: 'Glyphicons Halflings';
+    font-size: 0.6em;
+}
+a[aria-expanded="true"]::before {
+    content: '\e260';
+}
+
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #6d7fcc;
+}
+
+ul.CTAs {
+    padding: 20px 20px 0 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    display: block;
+}
+a.download {
+    background: #fff;
+    color: #bf9b30;
+}
+a.article, a.article:hover {
+    background: #a67c00 !important;
+    color: #fff !important;
+}
+
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+#app {
+    width: calc(100% - 250px);
+    /*padding: 0 40px;*/
+    min-height: 100vh;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+#app.active {
+    width: 100%;
+}
+.thumbnail > img, .thumbnail a > img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+/* ---------------------------------------------------
+    SLIDER STYLE
+----------------------------------------------------- */
+#carousel-example-captions{
+    margin-bottom: 40px;
+}
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    width: 100%;
+    object-fit: cover;
+}
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    height: 400px;    /* Set slide height here */
+}
+.carousel-control:hover, .carousel-control:focus{
+    color: #bf9b30;
+}
+.carousel-control{
+    color: #a67c00;
+}
+.carousel-caption {
+    /*text-align: left;*/
+    /*right: 30%;*/
+    /*left: 10%;*/
+    /*text-align: left;*/
+}
+.carousel-caption h3{
+    padding: 5px;
+    background: #bf9b30;
+    padding: 5px;
+}
+.carousel-caption p {
+    background: #000;
+    padding: 5px;
+    color: #fff;
+    /*font-size: 14px;*/
+}
+.thumbnail {
+    border: none;
+    padding: 0;
+    border-radius: 0;
+    background-color: #fff;
+}
+.thumbnail .caption{
+    height: 170px;
+}
+.carousel-indicators .active {
+    background-color: #000;
+    border: 1px solid #000;
+}
+
+/* ---------------------------------------------------
+    GENERAL
+----------------------------------------------------- */
+.btn {
+    border-radius: 0px;
+}
+.input-group-btn button{
+    background-color: #bf9b30;
+    border-color: #a67c00;
+    color: #fff;
+}
+.form-control,.input-group-addon {
+    border-radius: 0px;
+}
+.btn-info{
+    background-color: #bf9b30;
+    border-color: #a67c00;
+}
+.btn-info:hover, .btn-info:focus, .btn-primary:focus, .btn-primary:hover {
+    background-color: #a67c00;
+    border-color: #bf9b30;
+}
+.search-for-help:focus {
+    border: 1px solid #a67c00;
+}
+.search-for-help {
+    border: 1px solid #bf9b30;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .caption h3 {
+        font-size: 16px;
+    }
+    ul.navbar-nav > li.menus{
+        width: calc(50% - 2px);
+        margin: 1px;
+    }
+
+    ul.navbar-nav > li:first-child {
+        width: 100%;
+    }
+    .navbar-collapse {
+        padding-left: 0;
+    }
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+    ul.navbar-nav > li.menus{
+        width: calc(50% - 2px);
+        margin: 1px;
+    }
+}
+
+/* Landscape phones and portrait tablets : xs only*/
+@media (max-width: 767px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #app {
+        width: 100%;
+    }
+    .on{
+        margin-left: 230px !important;
+    }
+    #app.active {
+        /*width: calc(100% - 250px);*/
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+
+    ul.navbar-nav > li.menus > a{
+        color: #bf9b30;
+    }
+    ul.navbar-nav > li.menus{
+        float: left;
+        position: relative;
+        width: calc(50% - 2px);
+        border: 1px solid #a67c00;
+        margin: 1px;
+    }
+
+    ul.navbar-nav > li.menus > a:hover{
+        /*background: #7386D5;*/
+        color: #a67c00;
+    }
+
+    .carousel-inner {
+        height: 270px;
+    }
+    .carousel-inner > .item > img, .carousel-inner > .item > a > img {
+        height: 100%;
+    }
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 479px) {
+    .carousel-inner > .item > img, .carousel-inner > .item > a > img {
+        height: 100%;
+    }
+    ul.navbar-nav > li.menus{
+        width: calc(50% - 2px);
+        margin: 1px;
+    }
+    .carousel-inner {
+        height: 180px;
+    }
+    .on{
+        margin-left: 248px !important;
+    }
+}
