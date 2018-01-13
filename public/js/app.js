@@ -42993,7 +42993,7 @@ var staticRenderFns = [
               _c("div", { staticClass: "carousel-caption" }, [
                 _c("h3", [_vm._v("First slide label")]),
                 _vm._v(" "),
-                _c("p", [
+                _c("p", { staticClass: "hidden-xs" }, [
                   _vm._v(
                     "Nulla vitae elit libero, a pharetra augue mollis interdum."
                   )
@@ -43015,7 +43015,7 @@ var staticRenderFns = [
               _c("div", { staticClass: "carousel-caption" }, [
                 _c("h3", [_vm._v("Second slide label")]),
                 _vm._v(" "),
-                _c("p", [
+                _c("p", { staticClass: "hidden-xs" }, [
                   _vm._v(
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                   )
@@ -43037,7 +43037,7 @@ var staticRenderFns = [
               _c("div", { staticClass: "carousel-caption" }, [
                 _c("h3", [_vm._v("Third slide label")]),
                 _vm._v(" "),
-                _c("p", [
+                _c("p", { staticClass: "hidden-xs" }, [
                   _vm._v(
                     "Praesent commodo cursus magna, vel scelerisque nisl consectetur."
                   )
