@@ -1,4 +1,4 @@
-<template>
+<template xmlns="">
     <div class="carousel slide" id="carousel-example-captions" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carousel-example-captions" data-slide-to="0" class=""></li>
@@ -8,7 +8,10 @@
             </li>
         </ol>
         <div class="carousel-inner" role="listbox">
-            <div class="item">
+            <div v-if="loading" class="text-center">
+                <p>Loading ....</p>
+            </div>
+            <div v-else="" class="item" v-for="(slider,index) in sliders">
                 <img alt="900x500"
                      class="img-responsive"
                      src="http://jktgo.com/wp-content/uploads/2018/01/anantara-1514864057.jpg"
@@ -16,28 +19,6 @@
                 <div class="carousel-caption">
                     <h3>First slide label</h3>
                     <p class="hidden-xs">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </div>
-            </div>
-
-            <div class="item">
-                <img alt="900x500"
-                     class="img-responsive"
-                     src="http://jktgo.com/wp-content/uploads/2018/01/anantara-1514864057.jpg"
-                     data-holder-rendered="true">
-                <div class="carousel-caption">
-                    <h3>Second slide label</h3>
-                    <p class="hidden-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-            </div>
-
-            <div class="item active">
-                <img alt="900x500"
-                 class="img-responsive"
-                 src="http://jktgo.com/wp-content/uploads/2018/01/anantara-1514864057.jpg"
-                 data-holder-rendered="true">
-                <div class="carousel-caption">
-                    <h3>Third slide label</h3>
-                    <p class="hidden-xs">Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
                 </div>
             </div>
         </div>
@@ -52,3 +33,33 @@
         </a>
     </div>
 </template>
+
+<script>
+    /*52.77.210.38*/
+    export default {
+        data() {
+            return {
+                loading: true,
+                sliders: [],
+                endpoint: 'api/sliders'
+            }
+        },
+        created() {
+            this.fetch()
+        },
+        methods: {
+            async fetch() {
+                setTimeout(() => {
+                    axios.get(this.endpoint)
+                        .then(({data}) => {
+                            this.sliders = data.data
+                            this.loading = false
+                        })
+                    this.$nextTick(() => {
+                        $('.carousel').carousel()
+                    })
+                },200)
+            }
+        }
+    }
+</script>
