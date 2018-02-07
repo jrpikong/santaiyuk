@@ -8,7 +8,6 @@
 
         <title>Laravel</title>
 
-        {{--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">--}}
         <!-- Our Custom CSS -->
         <link rel="stylesheet" href="{{mix('css/app.css')}}">
         <link rel="stylesheet" href="{{asset('css/custom.css')}}">
@@ -24,8 +23,7 @@
         <!-- Sidebar Holder -->
         <nav id="sidebar">
             <div class="sidebar-header">
-              <h1><b>Santai</b></h1>
-              <h2>Yuk.COM</h2>
+              <img src="{{asset('img/general/logo-ergi-keliling-596.png')}}" class="main-logo">
             </div>
 
             <ul class="list-unstyled CTAs">
@@ -132,7 +130,9 @@
                     </div>
                 </div>
             </nav>
+
             <slider-carousel></slider-carousel>
+
             <div class="container-fluid">
                 <div class="row">
                   <div class="col-sm-6 col-md-4">
@@ -187,7 +187,6 @@
             </div>
         </div>
     </div>
-
 
 
     <script src="{{mix('js/app.js')}}"></script>

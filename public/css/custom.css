@@ -111,6 +111,11 @@ ul.navbar-nav > li.menus > a:hover{
     background: #000;
 }
 
+.main-logo {
+    width: 200px;
+    /*height: ;*/
+}
+
 .social ul {
     color: #fff;
     list-style: none;
