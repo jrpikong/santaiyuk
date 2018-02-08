@@ -18,6 +18,8 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
+
+    Route::post('/posts',['uses' => 'PostController@store', 'as' => 'voyager.posts.store']);
 });
 
 Auth::routes();

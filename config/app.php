@@ -167,6 +167,7 @@ return [
         /*
          * Package Service Providers...
          */
+        Cartalyst\Tags\TagsServiceProvider::class,
 
         /*
          * Application Service Providers...
