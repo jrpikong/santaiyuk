@@ -130,61 +130,7 @@
                     </div>
                 </div>
             </nav>
-
-            <slider-carousel></slider-carousel>
-
-            <div class="container-fluid">
-                <div class="row">
-                  <div class="col-sm-6 col-md-4">
-                    <div class="thumbnail">
-                      <img alt="100%x200"
-                           data-src="http://jktgo.com/wp-content/uploads/2018/01/choco-1514960559-400x225.jpg"
-                           style="height: 200px; width: 100%; display: block;"
-                           src="http://jktgo.com/wp-content/uploads/2018/01/choco-1514960559-400x225.jpg"
-                           data-holder-rendered="true">
-                      <div class="caption">
-                        <h3>Ah Mah Cake Indonesia</h3>
-                        <p>
-                          Homemade freshly baked sponge cake from Singapore
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-sm-6 col-md-4">
-                    <div class="thumbnail">
-                      <img alt="100%x200"
-                           data-src="http://jktgo.com/wp-content/uploads/2018/01/concert-1514957799-400x225.jpg"
-                           style="height: 200px; width: 100%; display: block;"
-                           src="http://jktgo.com/wp-content/uploads/2018/01/concert-1514957799-400x225.jpg"
-                           data-holder-rendered="true">
-                      <div class="caption">
-                        <h3>Upcoming Music Concerts 2018 in Jakarta</h3>
-                        <p>
-                          Homemade freshly baked sponge cake from Singapore
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-sm-6 col-md-4">
-                    <div class="thumbnail">
-                      <img alt="100%x200"
-                           data-src="http://jktgo.com/wp-content/uploads/2017/12/2015_0716_15010400-01-1513322625-400x225.jpeg"
-                           style="height: 200px; width: 100%; display: block;"
-                           src="http://jktgo.com/wp-content/uploads/2017/12/2015_0716_15010400-01-1513322625-400x225.jpeg"
-                           data-holder-rendered="true">
-                      <div class="caption">
-                        <h3>Anomali Coffee’s New Menu</h3>
-                        <p>
-                          Four new meals by Anomali Coffee that you should give it a try!
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-            </div>
+            @yield('content')
         </div>
     </div>
 

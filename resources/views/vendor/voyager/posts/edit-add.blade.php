@@ -59,6 +59,9 @@
 @stop
 
 @section('content')
+    @php
+        $userRole = Auth::user()->role_id;
+    @endphp
     <div class="page-content container-fluid">
         <form class="form-edit-add" role="form" action="@if(isset($dataTypeContent->id)){{ route('voyager.posts.update', $dataTypeContent->id) }}@else{{ route('voyager.posts.store') }}@endif" method="POST" enctype="multipart/form-data">
             <!-- PUT Method if we are editing -->
@@ -192,9 +195,10 @@
                                 ])
                                 <input type="text" class="form-control" id="slug" name="slug"
                                        placeholder="slug"
-                                       {{!! isFieldSlugAutoGenerator($dataType, $dataTypeContent, "slug") !!}}
+                                       {{!! isFieldSlugAutoGenerator($dataType, $dataTypeContent, 'slug') !!}}
                                        value="@if(isset($dataTypeContent->slug)){{ $dataTypeContent->slug }}@endif">
                             </div>
+                            @if($userRole ==1)
                             <div class="form-group">
                                 <label for="name">{{ __('voyager.post.status') }}</label>
                                 <select class="form-control" name="status">
@@ -203,11 +207,22 @@
                                     <option value="PENDING"@if(isset($dataTypeContent->status) && $dataTypeContent->status == 'PENDING') selected="selected"@endif>{{ __('voyager.post.status_pending') }}</option>
                                 </select>
                             </div>
+                            @else
+                                <input type="hidden" name="status" value="PENDING"/>
+                            @endif
                             <div class="form-group">
                                 <label for="name">{{ __('voyager.post.category') }}</label>
                                 <select class="form-control" name="category_id">
-                                    @foreach(TCG\Voyager\Models\Category::all() as $category)
-                                        <option value="{{ $category->id }}"@if(isset($dataTypeContent->category_id) && $dataTypeContent->category_id == $category->id) selected="selected"@endif>{{ $category->name }}</option>
+                                    @php
+                                        $categories = TCG\Voyager\Models\Category::all()
+                                    @endphp
+                                    @if($userRole !=1)
+                                        @php
+                                            $categories = TCG\Voyager\Models\Category::where('contributor_option','=',1)->get()
+                                        @endphp
+                                    @endif
+                                    @foreach($categories as $category)
+                                    <option value="{{ $category->id }}"@if(isset($dataTypeContent->category_id) && $dataTypeContent->category_id == $category->id) selected="selected"@endif>{{ $category->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -219,15 +234,21 @@
                     </div>
 
                     <!-- ### TAGS ### -->
-                    <div class="panel panel-bordered panel-primary">
+                    <div class="panel panel-bordered panel-info">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="icon wb-image"></i> Tags</h3>
+                            <h3 class="panel-title"><i class="icon wb-search"></i> Tags</h3>
                             <div class="panel-actions">
                                 <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
                             </div>
                         </div>
                         <div class="panel-body">
-                            <input class="form-control" type="text" value="Amsterdam,Washington,Sydney,Beijing,Cairo" data-role="tagsinput" />
+                            <div class="tab-pane" id="TabCareerInfo" name="Career History">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input type="text" class="form-control"  value="@if(isset($tags)){{$tags}}@endif" id="inputTags" name="tags" data-role="tagsinput">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- ### IMAGE ### -->
@@ -299,51 +320,55 @@
 @stop
 
 @section('javascript')
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment-with-locales.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+    <!-- Bootstrap tags input -->
+    <script src="{{asset('js/plugins/bootstrap-tagsinput-latest/dist/bootstrap-tagsinput.min.js')}}"></script>
+    <!-- Type aheaed -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js" type="text/javascript"></script>
+    <script src="{{asset('js/bloodhound.min.js')}}" type="text/javascript"></script>
+
+
     <script>
         $('document').ready(function () {
-            var skills = new Bloodhound({
-                datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
-                queryTokenizer: Bloodhound.tokenizers.whitespace,
-                prefetch: '/api/get-tags/',
-                remote: {
-                    url: '/api/get-tags',
-                    filter: function(list) {
-                        if(list){
-                            return $.map(list, function(data) {
-                                console.log(data.name)
-                                return {
-                                    value:data.name,
-                                    name: data.name
-                                };
-                            });
-                        } else {
-                            return {};
-                        }
-                    }
-                }
-            });
-
-            skills.initialize();
-            $('#txtSkills').tagsinput({
-                typeaheadjs: {
-                    itemValue: 'value',
-                    itemText: 'text',
-                    hint: true,
-                    highlight: true,
-                    minLength: 10,
-                    displayKey: 'name',
-                    valueKey: 'name',
-                    display:'name',
-                    source: skills.ttAdapter()
-                }
-            });
-
-
             $('#slug').slugify();
 
             @if ($isModelTranslatable)
             $('.side-body').multilingual({"editing": true});
             @endif
+
+        });
+        var skills = new Bloodhound({
+            datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+            queryTokenizer: Bloodhound.tokenizers.whitespace,
+            remote: {
+                url: '/api/get-tags/?keyword=%QUERY%',
+                wildcard: '%QUERY%',
+                filter: function(list) {
+                    if(list){
+                        return $.map(list, function(data) {
+                            return {
+                                value:data.name,
+                                name: data.name
+                            };
+                        });
+                    } else {
+                        return {};
+                    }
+                }
+            }
+        });
+
+        // console.log(skills);
+        //
+        skills.initialize();
+        $('#inputTags').tagsinput({
+            typeaheadjs: {
+                name: 'tags',
+                displayKey: 'name',
+                valueKey: 'name',
+                source: skills.ttAdapter()
+            }
         });
     </script>
 @stop

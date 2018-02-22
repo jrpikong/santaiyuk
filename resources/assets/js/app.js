@@ -21,6 +21,8 @@ Vue.use(BootstrapVue);
  */
 
 Vue.component('slider-carousel', require('./components/home/SliderCarousel.vue'));
+Vue.component('post-category', require('./components/home/PostCategory.vue'));
+Vue.component('sidebar', require('./components/partials/sidebar.vue'));
 
 const app = new Vue({
     el: '#app'
