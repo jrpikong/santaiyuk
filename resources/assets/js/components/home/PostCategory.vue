@@ -29,7 +29,7 @@
             return {
                 loading: true,
                 endpoint: 'api/post-category/category-1/6',
-                urlRoute: 'http://localhost:8000/storage/',
+                urlRoute: '/storage/',
                 posts:[]
             }
         },

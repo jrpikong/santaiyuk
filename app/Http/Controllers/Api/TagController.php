@@ -15,7 +15,11 @@ class TagController extends Controller
     {
         $keyword = $request->input('keyword');
         return $tags = Post::allTags()->where('name','like','%'.$keyword.'%')->get();
-        Log::info($keyword);
+    }
+
+    public function getAllTags ()
+    {
+        $tags = Post::allTags()->get();
         if($tags->isEmpty()){
             return ApiHelper::buildResponse(400,'Data Not Found');
         }

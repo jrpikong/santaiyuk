@@ -11,7 +11,7 @@
                     <div>
                         {{--<ul>--}}
                         @foreach($tags as $tags)
-                            <span class="label label-info">{{$tags->name}}</span>
+                            <span class="tags">{{$tags->name}}</span>
                         @endforeach
                         {{--</ul>--}}
                     </div>

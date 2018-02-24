@@ -332,7 +332,26 @@ a.article, a.article:hover {
 }
 .sidebar-right{
     margin: 20px 5px 20px 0;
-    padding: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 2px solid #bf9b30;
+}
+.sidebar-title{
+    text-align: center;
+    background: #bf9b30;
+    color: #000000;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 10px;
+    margin: 0 10px 10px 10px;
+}
+.tags{
+    background: #bf9b30;
+    color: #ffffff;
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 2px;
+    border-radius: 0;
 }
 
 /* ---------------------------------------------------
