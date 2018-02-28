@@ -13,7 +13,6 @@ class CategoryController extends Controller
     public function index ()
     {
         $categories = Category::all();
-
-        return ApiHelper::buildResponse(200,null,CategoryResource::collection($categories));
+        return ApiHelper::buildResponse(200,null,$categories);
     }
 }

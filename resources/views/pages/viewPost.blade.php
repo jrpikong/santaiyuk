@@ -16,6 +16,9 @@
                         {{--</ul>--}}
                     </div>
                 </div>
+                <div class="background-wite content text-center">
+                    <img src="{{asset('img/image001.jpg')}}" width="100%" class="img-responsive">
+                </div>
             </div>
 
             {{--Sidebar with Vue JS--}}
