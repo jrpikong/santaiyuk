@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>Laravel</title>
+        <title>pergikeliling.com</title>
 
         <!-- Our Custom CSS -->
         <link rel="stylesheet" href="{{mix('css/app.css')}}">
@@ -39,7 +39,7 @@
 
             <ul class="list-unstyled components">
                 <li class="active">
-                    <a href="#">Home</a>
+                    <a href="/">Home</a>
                 </li>
                 <li>
                     <a href="#">Food & Drinks</a>

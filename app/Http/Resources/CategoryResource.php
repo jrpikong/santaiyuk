@@ -14,14 +14,12 @@ class CategoryResource extends ResourceCollection
      */
     public function toArray($request)
     {
-        print_r($request);
-        exit();
         return [
-//            'idCat' => $this->id,
-//            'parent_id' => $this->parent_id,
-            'order' => $this->order,
-            'name' => $request->name,
-            'slug' => $request->slug
+//            'id' => $this->id,
+            'parent_id' => $this->parent_id,
+//            'order' => $this->order,
+//            'name' => $this->name,
+//            'slug' => $this->slug
         ];
     }
 }

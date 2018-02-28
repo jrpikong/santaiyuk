@@ -28,7 +28,7 @@
         data() {
             return {
                 loading: true,
-                endpoint: 'api/post-category/category-1/6',
+                endpoint: 'api/post-category/category-1/18',
                 urlRoute: '/storage/',
                 posts:[]
             }

@@ -246,7 +246,7 @@ a.article, a.article:hover {
     background-color: #fff;
 }
 .thumbnail .caption{
-    height: 170px;
+    height: 225px;
 }
 .carousel-indicators .active {
     background-color: #000;
@@ -296,6 +296,10 @@ a.article, a.article:hover {
 .background-wite{
     background: #fff;
 }
+.background-wite > p > a > img {
+    width: 100%;
+    object-fit: cover;
+}
 .background-gold{
     background: #bf9b30;
     color: #000;
@@ -314,7 +318,7 @@ a.article, a.article:hover {
     text-transform: uppercase;
 }
 .sidebar-right-top span{
-    font-size: 48px;
+    font-size: 35px;
     display: block;
     font-weight: 700;
 }
