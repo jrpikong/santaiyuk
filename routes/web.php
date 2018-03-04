@@ -28,4 +28,5 @@ Route::get('/', 'MainController@index');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/category/{slug}', 'ListArticleController@index');
 Route::get('/{slug}','Api\PostController@view');

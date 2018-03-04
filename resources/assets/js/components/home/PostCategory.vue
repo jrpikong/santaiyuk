@@ -35,7 +35,12 @@
         },
         created() {
             this.fetch()
+            console.log(this.surveyData)
         },
+        mounted () {
+          console.log(this.surveyData)
+        },
+        props: ['surveyData'],
         methods: {
             async fetch() {
                 setTimeout(() => {
