@@ -11,11 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('pages.homePage');
-});
-
-
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 
@@ -27,6 +22,10 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 Auth::routes();
+
+
+Route::get('/', 'MainController@index');
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/{slug}','Api\PostController@view');

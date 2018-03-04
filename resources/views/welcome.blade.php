@@ -36,37 +36,38 @@
                 </li>
               @endguest
             </ul>
+            {{ menu('main-menu','my_menu') }}
 
-            <ul class="list-unstyled components">
-                <li class="active">
-                    <a href="/">Home</a>
-                </li>
-                <li>
-                    <a href="#">Food & Drinks</a>
-                </li>
-                <li>
-                    <a href="#">Activities</a>
-                </li>
-                <li>
-                    <a href="#">Travelling</a>
-                </li>
-                <li>
-                    <a href="#">Product</a>
-                </li>
-                <li>
-                    <a href="#">news</a>
-                </li>
-                <li>
-                    <a href="#">Events</a>
-                </li>
-                <li>
-                    <a href="#">Hotel & Ticket Bookings</a>
-                </li>
+            {{--<ul class="list-unstyled components">--}}
+                {{--<li class="active">--}}
+                    {{--<a href="/">Home</a>--}}
+                {{--</li>--}}
+                {{--<li>--}}
+                    {{--<a href="#">Food & Drinks</a>--}}
+                {{--</li>--}}
+                {{--<li>--}}
+                    {{--<a href="#">Activities</a>--}}
+                {{--</li>--}}
+                {{--<li>--}}
+                    {{--<a href="#">Travelling</a>--}}
+                {{--</li>--}}
+                {{--<li>--}}
+                    {{--<a href="#">Product</a>--}}
+                {{--</li>--}}
+                {{--<li>--}}
+                    {{--<a href="#">news</a>--}}
+                {{--</li>--}}
+                {{--<li>--}}
+                    {{--<a href="#">Events</a>--}}
+                {{--</li>--}}
+                {{--<li>--}}
+                    {{--<a href="#">Hotel & Ticket Bookings</a>--}}
+                {{--</li>--}}
 
-                <li>
-                    <a href="#">Sobat Santai</a>
-                </li>
-            </ul>
+                {{--<li>--}}
+                    {{--<a href="#">Sobat Santai</a>--}}
+                {{--</li>--}}
+            {{--</ul>--}}
             <div class="social">
               <ul>
                 <li>
