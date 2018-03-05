@@ -13,12 +13,9 @@
                                      style="height: 200px; width: 100%; display: block;"
                                      src="{{asset('storage/'.$item->image)}}"
                                      data-holder-rendered="true">
-                                <div class="caption">
+                                <div class="caption text-center">
                                     <h3>{{$item->title}}</h3>
                                     <p>{{$item->created_at}}</p>
-                                    <p>
-                                        {{$item->excerpt}}
-                                    </p>
                                 </div>
                             </div>
                         </a>
