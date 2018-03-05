@@ -16,6 +16,7 @@ class PostResource extends Resource
      */
     public function toArray($request)
     {
+        $voyagerHelper = new \VoyagerHelper();
         return [
             'id' => $this->id,
             'author_id' => [
@@ -25,7 +26,7 @@ class PostResource extends Resource
             'seo_title' => $this->seo_title,
             'excerpt' => $this->excerpt,
             'body' => $this->body,
-            'image' => $this->image,
+            'image' => $voyagerHelper->thumbnail($this->image,'medium'),
             'slug' => $this->slug,
             'meta_description' => $this->meta_description,
             'meta_keywords' => $this->meta_keywords,

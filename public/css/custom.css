@@ -108,7 +108,7 @@ ul.navbar-nav > li.menus > a:hover{
 
 #sidebar ul li.active > a, a[aria-expanded="true"] {
     color: #fff;
-    background: #000;
+    /*background: #000;*/
 }
 
 .main-logo {
@@ -160,7 +160,7 @@ a[aria-expanded="true"]::before {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #6d7fcc;
+    background: #a67c00;
 }
 
 ul.CTAs {

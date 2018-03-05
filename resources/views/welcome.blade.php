@@ -37,50 +37,22 @@
               @endguest
             </ul>
 
-            <ul class="list-unstyled components">
-                <li class="active">
-                    <a href="/">Home</a>
-                </li>
-                <li>
-                    <a href="#">Food & Drinks</a>
-                </li>
-                <li>
-                    <a href="#">Activities</a>
-                </li>
-                <li>
-                    <a href="#">Travelling</a>
-                </li>
-                <li>
-                    <a href="#">Product</a>
-                </li>
-                <li>
-                    <a href="#">news</a>
-                </li>
-                <li>
-                    <a href="#">Events</a>
-                </li>
-                <li>
-                    <a href="#">Hotel & Ticket Bookings</a>
-                </li>
+            {{ menu('main-menu','my_menu') }}
 
-                <li>
-                    <a href="#">Sobat Santai</a>
-                </li>
-            </ul>
             <div class="social">
               <ul>
                 <li>
-                  <a>
+                  <a href="https://www.facebook.com/Pergi-Keliling-718357488361564" target="_blank">
                     <i class="fa fa-facebook" aria-hidden="true"></i>
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.instagram.com/santai.yuk/" target="_blank">
+                  <a href="https://www.instagram.com/pergikeliling/" target="_blank">
                     <i class="fa fa-instagram" aria-hidden="true"></i>
                   </a>
                 </li>
                 <li>
-                  <a href="https://twitter.com/santai_yukk" target="_blank">
+                  <a href="https://twitter.com/pergikeliling" target="_blank">
                     <i class="fa fa-twitter" aria-hidden="true"></i>
                   </a>
                 </li>

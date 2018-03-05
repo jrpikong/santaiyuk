@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Library\ApiHelper;
+use App\Http\Library\VoyagerHelper;
 use App\Http\Resources\PostResource;
 use App\Post;
 use Illuminate\Http\Request;
@@ -26,6 +27,10 @@ class PostController extends Controller
             ->get();
         if ($post->isEmpty()) {
             return ApiHelper::buildResponse(400,'Data Not Found');
+        }
+        $voyagerHelper = new VoyagerHelper();
+        foreach ($post as $item) {
+            $item->image = $voyagerHelper->thumbnail($item->image, 'medium');
         }
         return ApiHelper::buildResponse(200,null,$post);
     }
