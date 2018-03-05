@@ -13,7 +13,7 @@
                                      style="height: 200px; width: 100%; display: block;"
                                      src="{{asset('storage/'.$item->image)}}"
                                      data-holder-rendered="true">
-                                <div class="caption text-center" style="height: 120px">
+                                <div class="caption text-center" style="height: 150px">
                                     <h3>{{$item->title}}</h3>
                                     <p>{{$item->created_at}}</p>
                                 </div>
