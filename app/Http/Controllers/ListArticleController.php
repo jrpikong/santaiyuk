@@ -12,9 +12,12 @@ class ListArticleController extends Controller
     public function index (Request $request,$slug)
     {
         $slug = $slug;
-        $article = Post::with( array(
+        $article = Post::whereHas( 'category' ,function ($query)use($slug) {
+            $query->where('slug', '=', $slug);
+            $query->select('id', 'parent_id', 'order', 'name', 'slug');
+
+        })->with( array(
             'category' => function ($query)use($slug) {
-                $query->where('slug','=',$slug);
                 $query->select('id','parent_id','order','name','slug');
             },
             'authorId' => function ($query){
