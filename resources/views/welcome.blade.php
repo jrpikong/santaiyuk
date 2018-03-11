@@ -124,6 +124,10 @@
                 $('a[aria-expanded=true]').attr('aria-expanded', 'false');
                 $(this).find('i').toggleClass('glyphicon-align-left').toggleClass('glyphicon-align-right');
             });
+
+            $('.dropdown').on('click', function (e) {
+                $(this).find('#dropdown').toggleClass('in')
+            })
         });
     </script>
     </body>
