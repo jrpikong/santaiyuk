@@ -69,7 +69,7 @@
                 loading: false,
                 sliders: [],
                 endpoint: 'api/sliders',
-                urlRoute: 'http://localhost:8000/storage/',
+                urlRoute: '/storage/',
                 options: {
                     arrows: false,
                     dots: true,
