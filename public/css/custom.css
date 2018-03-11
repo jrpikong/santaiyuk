@@ -297,11 +297,12 @@ a.article, a.article:hover {
     background: #fff;
 }
 .background-wite > p > img {
-
+    width: 100% !important;
+    object-fit: cover !important;
 }
 .background-wite > p > a > img {
-    width: 100%;
-    object-fit: cover;
+    width: 100% !important;
+    object-fit: cover !important;
 }
 .background-gold{
     background: #bf9b30;
