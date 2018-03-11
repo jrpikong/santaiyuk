@@ -206,7 +206,7 @@ a.article, a.article:hover {
     SLIDER STYLE
 ----------------------------------------------------- */
 .agile__dots{
-    display:none;
+    display:none !important;
 }
 #carousel-example-captions{
     margin-bottom: 40px;
