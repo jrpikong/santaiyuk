@@ -27,9 +27,9 @@ class ListArticleController extends Controller
                 'meta_description','meta_keywords','featured','published_at','created_at','author_id','category_id'
             )
             ->get();
-        if ($article->isEmpty()) {
-            return ApiHelper::buildResponse(400,'Data Not Found');
-        }
+//        if ($article->isEmpty()) {
+//            return ApiHelper::buildResponse(400,'Data Not Found');
+//        }
         $voyagerHelper = new VoyagerHelper();
         foreach ($article as $item) {
             $item->image = $voyagerHelper->thumbnail($item->image, 'medium');

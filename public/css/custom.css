@@ -255,7 +255,7 @@ a.article, a.article:hover {
 .image-view-post{
     background-color: #f8f8f8;
     width: 100%;
-    height: 400px;
+    height: auto;
     object-fit: cover;
     margin-bottom: 40px;
 }
@@ -295,6 +295,9 @@ a.article, a.article:hover {
 }
 .background-wite{
     background: #fff;
+}
+.background-wite > p > img {
+
 }
 .background-wite > p > a > img {
     width: 100%;

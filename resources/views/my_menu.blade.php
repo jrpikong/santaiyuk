@@ -1,8 +1,8 @@
-{{--<ul class="list-unstyled components">--}}
 @if(!isset($innerLoop))
         <ul class="list-unstyled components">
 @else
-        <ul id="homeSubmenu" class="list-unstyled collapse">
+
+        <ul id="dropdown" class="list-unstyled collapse">
 @endif
 
 @php
@@ -29,7 +29,7 @@
                     if(url($item->link()) == url()->current()){
                                 $listItemClass = 'in';
                         }else{
-                                $listItemClass = '';
+                                $listItemClass = 'dropdown';
                         }
 
                 }
