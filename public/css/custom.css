@@ -299,10 +299,12 @@ a.article, a.article:hover {
 .background-wite > p > img {
     width: 100% !important;
     object-fit: cover !important;
+    height: auto;
 }
 .background-wite > p > a > img {
     width: 100% !important;
     object-fit: cover !important;
+    height: auto;
 }
 .background-gold{
     background: #bf9b30;
