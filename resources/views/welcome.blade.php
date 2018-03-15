@@ -96,7 +96,7 @@
                             </li>
                             <li class="menus"><a href="#">Recent Post</a></li>
                             <li class="menus"><a href="#">Trending</a></li>
-                            <li class="menus"><a href="#">Review With Us</a></li>
+                            <li class="menus"><a href="{{route('directory')}}">Review With Us</a></li>
                             <li class="menus"><a href="#">Videos</a></li>
                         </ul>
                     </div>
