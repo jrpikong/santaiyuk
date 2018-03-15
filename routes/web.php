@@ -30,3 +30,5 @@ Route::get('/', 'MainController@index');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/category/{slug}', 'ListArticleController@index');
 Route::get('/{slug}','Api\PostController@view');
+Route::get('/formulir/directory/', 'FormController@directoryForm')->name('directory');
+Route::post('/formulir/directory/post-hotel', 'FormController@postHotel')->name('postHotel');
