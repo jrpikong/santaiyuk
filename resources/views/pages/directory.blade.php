@@ -19,8 +19,7 @@
                             @include('pages.form.directoryFoodAndDrink')
                         </div>
                         <div id="activities-travelling" class="tab-pane fade">
-                            <h3>ACTIVITIES & TRAVELLING</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            @include('pages.form.directoryActivitiesTravelling')
                         </div>
                         <div id="product" class="tab-pane fade">
                             @include('pages.form.direktoriProduct')
