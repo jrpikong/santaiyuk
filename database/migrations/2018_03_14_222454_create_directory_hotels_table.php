@@ -15,28 +15,28 @@ class CreateDirectoryHotelsTable extends Migration
     {
         Schema::create('directory_hotels', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->text('address');
-            $table->string('number_reservation')->nullable();
-            $table->string('instagram');
+            $table->string('nama_hotel');
+            $table->string('narahubung');
+            $table->string('jabatan');
+            $table->string('no_hp_narahubung');
+            $table->string('email_narahubung');
+            $table->string('alamat_lengkap');
+            $table->string('nomor_reservasi');
+            $table->string('instagram')->nullable();
             $table->string('website')->nullable();
             $table->string('group_by')->nullable();
-            $table->string('type_of_lodging');
-            $table->string('hotel_description');
-            $table->string('recomendation_for');
-            $table->integer('total_rooms');
-            $table->text('type_rooms');
-            $table->string('range_price');
-            $table->text('public_facilities_room')->nullable();
-            $table->text('public_facilities_hotel')->nullable();
-            $table->string('nearest_interesting_location')->nullable();
-            $table->string('awards_ever_achieved')->nullable();
-            $table->string('identity');
-            $table->longText('images');
-            $table->string('contact_person');
-            $table->string('position');
-            $table->string('no_phone');
-            $table->string('email');
+            $table->integer('jumlah_kamar');
+            $table->text('tempat_menarik_terdekat')->nullable();
+            $table->string('penghargaan')->nullable();
+            $table->text('keunikan')->nullable();
+            $table->string('jenis_penginapan');
+            $table->string('rekomendasi_untuk');
+            $table->string('range_harga_kamar');
+            $table->string('fasilitas_hotel');
+            $table->text('deskripsi_hotel');
+            $table->text('tipe_kamar');
+            $table->text('fasilitas_umum_kamar');
+            $table->longText('img');
             $table->timestamps();
         });
     }

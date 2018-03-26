@@ -256,18 +256,6 @@
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-3" for="wi-fi">Wi-fi : </label>
-                <div class="col-sm-9">
-                    <label class="radio-inline">
-                        <input type="radio" name="wi-fi" id="wi-fi" value="Tersedia">Tersedia
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="wi-fi" id="wi-fi" value="Tidak Tersedia">Tidak Tersedia
-                    </label>
-                </div>
-            </div>
-
-            <div class="form-group">
                 <label class="control-label col-sm-3" for="hiburan-khusus">Hiburan Khusus : </label>
                 <div class="col-sm-9">
                     <label class="radio-inline">
@@ -323,7 +311,7 @@
 
 
             <div class="form-group">
-                <label class="control-label col-sm-3" for="deskripsi-hotel">Deskripsi Hotel</label>
+                <label class="control-label col-sm-3" for="deskripsi-hotel">Deskripsi Hotel :</label>
                 <div class="col-sm-9">
                     <textarea class="form-control" id="deskripsi-hotel" name="deskripsi-hotel" placeholder="Deskripsi Hotel Anda"></textarea>
                 </div>
