@@ -203,6 +203,7 @@ return [
 
     // Here you can specify additional assets you would like to be included in the master.blade
     'additional_css' => [
+        'js/plugins/bootstrap-tagsinput-latest/dist/bootstrap-tagsinput.css'
         //'css/custom.css',
     ],
 

@@ -8,6 +8,11 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+import VueAgile from 'vue-agile'
+Vue.use(VueAgile)
+
+import BootstrapVue from 'bootstrap-vue'
+Vue.use(BootstrapVue);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -16,6 +21,9 @@ window.Vue = require('vue');
  */
 
 Vue.component('slider-carousel', require('./components/home/SliderCarousel.vue'));
+Vue.component('post-category', require('./components/home/PostCategory.vue'));
+Vue.component('sidebar', require('./components/partials/sidebar.vue'));
+Vue.component('list-category', require('./components/pages/ListCategory'));
 
 const app = new Vue({
     el: '#app'

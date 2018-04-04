@@ -108,7 +108,12 @@ ul.navbar-nav > li.menus > a:hover{
 
 #sidebar ul li.active > a, a[aria-expanded="true"] {
     color: #fff;
-    background: #000;
+    /*background: #000;*/
+}
+
+.main-logo {
+    width: 200px;
+    /*height: ;*/
 }
 
 .social ul {
@@ -155,7 +160,7 @@ a[aria-expanded="true"]::before {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #6d7fcc;
+    background: #a67c00;
 }
 
 ul.CTAs {
@@ -200,6 +205,9 @@ a.article, a.article:hover {
 /* ---------------------------------------------------
     SLIDER STYLE
 ----------------------------------------------------- */
+.agile__dots{
+    display:none !important;
+}
 #carousel-example-captions{
     margin-bottom: 40px;
 }
@@ -241,11 +249,18 @@ a.article, a.article:hover {
     background-color: #fff;
 }
 .thumbnail .caption{
-    height: 170px;
+    height: 225px;
 }
 .carousel-indicators .active {
     background-color: #000;
     border: 1px solid #000;
+}
+.image-view-post{
+    background-color: #f8f8f8;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 40px;
 }
 
 /* ---------------------------------------------------
@@ -275,6 +290,81 @@ a.article, a.article:hover {
 }
 .search-for-help {
     border: 1px solid #bf9b30;
+}
+
+.content{
+    margin: 20px 0 20px 5px;
+    padding: 20px;
+}
+.background-wite{
+    background: #fff;
+}
+.background-wite > p > img {
+    width: 100% !important;
+    object-fit: cover !important;
+    height: auto;
+}
+.background-wite > p > a > img {
+    width: 100% !important;
+    object-fit: cover !important;
+    height: auto;
+}
+.background-gold{
+    background: #bf9b30;
+    color: #000;
+}
+.sidebar-right-top{
+    text-align: center;
+    margin: 20px 5px 20px 0;
+    padding: 20px;
+
+}
+.sidebar-right-top h2 {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+.sidebar-right-top span{
+    font-size: 35px;
+    display: block;
+    font-weight: 700;
+}
+
+.sidebar-right-top form input{
+    height: 50px;
+    text-align: center;
+}
+.sidebar-right-top form button{
+    height: 50px;
+    background: #000;
+    color: #bf9b30;
+    margin-top: 5px;
+    font-size: 24px;
+}
+.sidebar-right{
+    margin: 20px 5px 20px 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 2px solid #bf9b30;
+}
+.sidebar-title{
+    text-align: center;
+    background: #bf9b30;
+    color: #000000;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 10px;
+    margin: 0 10px 10px 10px;
+}
+.tags{
+    background: #bf9b30;
+    color: #ffffff;
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 2px;
+    border-radius: 0;
 }
 
 /* ---------------------------------------------------

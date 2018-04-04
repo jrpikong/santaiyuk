@@ -21,7 +21,6 @@ class SliderResource extends Resource
             'image' => $this->image,
             'url-slug' => $this->url,
             'created_at'    => $this->created_at->diffForHumans()
-
         ];
     }
 }
