@@ -1,14 +1,27 @@
-    <!doctype html>
 <html lang="{{ app()->getLocale() }}">
-<body>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <title>pergikeliling.com</title>
+
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="{{mix('css/app.css')}}">
+    <link rel="stylesheet" href="{{asset('css/custom.css')}}">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+</head>
+<body>
 
 
 <div class="wrapper">
     <!-- Sidebar Holder -->
     <nav id="sidebar">
         <div class="sidebar-header">
-            <img src="{{asset('img/general/logo-ergi-keliling-596.png')}}" class="main-logo">
+            <img src="{{asset('img/general/main-logo.png')}}" class="main-logo" height="200">
         </div>
 
         <ul class="list-unstyled CTAs">
@@ -20,6 +33,23 @@
                     </a>
                 </li>
             @endguest
+
+            @auth
+
+
+                <li>
+                    <a href="{{ route('logout') }}"
+                       onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();" class="download">
+                        <i class="glyphicon glyphicon-user"></i>
+                        LOGOUT
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
+                </li>
+            @endauth
         </ul>
 
         {{ menu('main-menu','my_menu') }}
@@ -116,19 +146,4 @@
     });
 </script>
 </body>
-<head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-
-        <title>pergikeliling.com</title>
-
-        <!-- Our Custom CSS -->
-        <link rel="stylesheet" href="{{mix('css/app.css')}}">
-        <link rel="stylesheet" href="{{asset('css/custom.css')}}">
-        <!-- Scrollbar Custom CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
-
-    </head>
 </html>

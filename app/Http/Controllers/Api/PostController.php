@@ -10,18 +10,28 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 class PostController extends Controller
 {
+    public function getRecentPost($limit)
+    {
+        $post = Post::
+            orderby('created_at','DESC')
+            ->limit($limit)
+            ->get();
+        if ($post->isEmpty()) {
+            return ApiHelper::buildResponse(400,'Data Not Found');
+        }
+        $voyagerHelper = new VoyagerHelper();
+        foreach ($post as $item) {
+            $item->image = $voyagerHelper->thumbnail($item->image, 'medium');
+        }
+        return ApiHelper::buildResponse(200,null,$post);
+    }
     public function getByCategory ($slugcat,$limit)
     {
-        $post = Post::with( array(
-            'category' => function ($query)use($slugcat) {
-                $query->where('slug','=',$slugcat);
-                $query->select('id','parent_id','order','name','slug');
-            },
-            'authorId' => function ($query){
-                $query->select('id','name','avatar');
-            }))
-            ->select('id','title','seo_title','excerpt','body','image','slug',
-                'meta_description','meta_keywords','featured','published_at','created_at','author_id','category_id'
+        $post = Post::
+            join('categories','categories.id','=','posts.category_id')
+            ->where('categories.slug',$slugcat)
+            ->select('posts.id','title','seo_title','excerpt','body','image','posts.slug',
+                'meta_description','meta_keywords','featured','posts.published_at','posts.created_at','author_id','category_id'
             )
             ->limit($limit)
             ->get();
