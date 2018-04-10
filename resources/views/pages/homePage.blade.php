@@ -5,7 +5,12 @@
 
     <div class="container-fluid">
         <div class="row">
-            <post-category></post-category>
+            {{--Recent--}}
+            <recent></recent>
+            {{--News--}}
+            <news></news>
+            {{--Hotel--}}
+            <hotel></hotel>
         </div>
     </div>
 @endsection

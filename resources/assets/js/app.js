@@ -21,7 +21,9 @@ Vue.use(BootstrapVue);
  */
 
 Vue.component('slider-carousel', require('./components/home/SliderCarousel.vue'));
-Vue.component('post-category', require('./components/home/PostCategory.vue'));
+Vue.component('recent', require('./components/home/Recent.vue'));
+Vue.component('news', require('./components/home/News.vue'));
+Vue.component('hotel', require('./components/home/Hotel.vue'));
 Vue.component('sidebar', require('./components/partials/sidebar.vue'));
 Vue.component('list-category', require('./components/pages/ListCategory'));
 
