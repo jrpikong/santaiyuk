@@ -25,3 +25,5 @@ Route::get('sliders','Api\SliderController@index');
 Route::get('post-recent/{limit}','Api\PostController@getRecentPost');
 Route::get('post-category/{slugcat}/{limit}','Api\PostController@getByCategory');
 Route::get('post/{slug}', 'Api\PostController@getBySlug');
+
+Route::get('coba', 'Auth\RegisterController@coba');

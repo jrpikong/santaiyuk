@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Mail\RegisterEmail;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Mail;
 
 class RegisterController extends Controller
 {
@@ -62,10 +64,17 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $this->send_email($data['email']);
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+    private function send_email($email)
+    {
+        $data = ['message' => 'Register'];
+        Mail::to($email)->send(new RegisterEmail($data));
     }
 }

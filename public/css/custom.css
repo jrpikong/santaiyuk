@@ -310,6 +310,18 @@ a.article, a.article:hover {
     object-fit: cover !important;
     height: auto;
 }
+.background-wite >p > a> strong > iframe{
+    width: 100% !important;
+    height: auto;
+}
+.background-wite >p > a > iframe{
+    width: 100% !important;
+    height: auto;
+}
+.background-wite >p > strong > iframe{
+    width: 100% !important;
+    height: auto;
+}
 .background-gold{
     background: #bf9b30;
     color: #000;
