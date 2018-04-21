@@ -26,6 +26,8 @@ Vue.component('news', require('./components/home/News.vue'));
 Vue.component('hotel', require('./components/home/Hotel.vue'));
 Vue.component('sidebar', require('./components/partials/sidebar.vue'));
 Vue.component('list-category', require('./components/pages/ListCategory'));
+Vue.component('recent-post', require('./components/pages/RecentPost'));
+Vue.component('traveling', require('./components/home/Traveling'));
 
 const app = new Vue({
     el: '#app'

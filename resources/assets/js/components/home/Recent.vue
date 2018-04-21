@@ -12,26 +12,38 @@
                              :src="urlRoute + post.image"
                              data-holder-rendered="true">
                         <div class="caption">
-                            <h3>{{post.title | cutString(70, ' . . .')}}</h3>
-                            <p>{{post.created_at}}</p>
-                            <p>
-                                {{post.excerpt | cutString(66, ' . . .')}}
-                            </p>
+                            <h3>{{post.title}}</h3>
                         </div>
                     </div>
                 </a>
             </div>
+            <div class="col-sm-6 col-md-4">
+                <KeepWithUs></KeepWithUs>
+            </div>
         </div>
+        <div class="col-sm-12 text-center">
+            <div class="col-sm-offset-4">
+                <div class="col-sm-6">
+                    <a href="/recent-post" class="btn form-control" style="background: black;color: #fff;">More Article</a>
+                </div>
+            </div>
+        </div>
+            <!--<div class="col-sm-offset-4"></div>-->
     </div>
 </template>
 
 <script>
+    import KeepWithUs from '../partials/KeepWithUs'
     export default {
         name: "post-category",
+        components: {KeepWithUs},
+        component() {
+            KeepWithUs: KeepWithUs
+        },
         data() {
             return {
                 loading: true,
-                endpoint: 'api/post-recent/6',
+                endpoint: 'api/post-recent/5',
                 urlRoute: '/storage/',
                 posts:[]
             }

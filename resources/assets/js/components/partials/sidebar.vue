@@ -1,18 +1,7 @@
 <template>
     <div class="col-md-3">
         <div class="col-md-12">
-            <div class="background-gold sidebar-right-top">
-                <h2>
-                    Keep Up With
-                    <span>Pergi Keliling</span>
-                </h2>
-                <form>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="By Entering Your E-mail"/>
-                        <button class="btn form-control" type="submit">I'm Ready</button>
-                    </div>
-                </form>
-            </div>
+            <keep-with-us></keep-with-us>
         </div>
         <!--Siderbar Category-->
         <div class="col-md-12">
@@ -33,6 +22,10 @@
 </template>
 
 <script>
+    import KeepWithUs from '../partials/KeepWithUs'
+    export default {
+        components: {KeepWithUs},
+    }
     // export default {
     //     name: "sidebar",
     //     data () {

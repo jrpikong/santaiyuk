@@ -2,7 +2,6 @@
     <div>
         <div v-if="loading" class="col-sm-12 text-center">Loading ... </div>
         <div v-else class="col-sm-12">
-            <h2 style="border-bottom: 2px solid #bf9b30;padding-left:15px;padding-right:15px;">NEWS FLASH</h2>
             <div  v-for="post in posts" class="col-sm-6 col-md-4">
                 <a :href="post.slug">
                     <div class="thumbnail">
@@ -18,33 +17,22 @@
                 </a>
             </div>
         </div>
-        <div class="col-sm-12 text-center">
-            <div class="col-sm-offset-4">
-                <div class="col-sm-6">
-                    <a href="/category/sekilas-info" class="btn form-control" style="background: black;color: #fff;">More Article</a>
-                </div>
-            </div>
-        </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: "post-category",
+        name: "RecentPost",
         data() {
             return {
                 loading: true,
-                endpoint: 'api/post-category/sekilas-info/6',
+                endpoint: 'api/post-recent/15',
                 urlRoute: '/storage/',
                 posts:[]
             }
         },
         created() {
             this.fetch()
-            console.log(this.surveyData)
-        },
-        mounted () {
-          console.log(this.surveyData)
         },
         props: ['surveyData'],
         methods: {
@@ -57,11 +45,6 @@
                         })
                 },200)
             }
-        },
-        filters: {
-          cutString(text, length, suffix) {
-               return (text != null)? text.substring(0, length) + suffix: ''
-          }
         }
     }
 </script>

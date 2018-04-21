@@ -2,7 +2,7 @@
     <div>
         <div v-if="loading" class="col-sm-12 text-center">Loading ... </div>
         <div v-else class="col-sm-12">
-            <h2 style="border-bottom: 2px solid #bf9b30;padding-left:15px;padding-right:15px;">NEWS FLASH</h2>
+            <h2 style="border-bottom: 2px solid #bf9b30;padding-left:15px;padding-right:15px;">Traveling</h2>
             <div  v-for="post in posts" class="col-sm-6 col-md-4">
                 <a :href="post.slug">
                     <div class="thumbnail">
@@ -17,24 +17,33 @@
                     </div>
                 </a>
             </div>
+            <div class="col-sm-6 col-md-4">
+                <KeepWithUs></KeepWithUs>
+            </div>
         </div>
         <div class="col-sm-12 text-center">
             <div class="col-sm-offset-4">
                 <div class="col-sm-6">
-                    <a href="/category/sekilas-info" class="btn form-control" style="background: black;color: #fff;">More Article</a>
+                    <a href="/category/wisata" class="btn form-control" style="background: black;color: #fff;">More Article</a>
                 </div>
             </div>
         </div>
+            <!--<div class="col-sm-offset-4"></div>-->
     </div>
 </template>
 
 <script>
+    import KeepWithUs from '../partials/KeepWithUs'
     export default {
         name: "post-category",
+        components: {KeepWithUs},
+        component() {
+            KeepWithUs: KeepWithUs
+        },
         data() {
             return {
                 loading: true,
-                endpoint: 'api/post-category/sekilas-info/6',
+                endpoint: 'api/post-recent/5',
                 urlRoute: '/storage/',
                 posts:[]
             }

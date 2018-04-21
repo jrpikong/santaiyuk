@@ -3,7 +3,7 @@
         <div v-if="loading" class="col-sm-12 text-center">Loading ... </div>
         <div v-else class="col-sm-12">
             <h2 style="border-bottom: 2px solid #bf9b30;padding-left:15px;padding-right:15px;">Hotel</h2>
-            <div v-for="post in posts" class="col-sm-6 col-md-4">
+            <div  v-for="post in posts" class="col-sm-6 col-md-4">
                 <a :href="post.slug">
                     <div class="thumbnail">
                         <img alt="100%x200"
@@ -12,14 +12,17 @@
                              :src="urlRoute + post.image"
                              data-holder-rendered="true">
                         <div class="caption">
-                            <h3>{{post.title | cutString(70, ' . . .')}}</h3>
-                            <p>{{post.created_at}}</p>
-                            <p>
-                                {{post.excerpt | cutString(66, ' . . .')}}
-                            </p>
+                            <h3>{{post.title}}</h3>
                         </div>
                     </div>
                 </a>
+            </div>
+        </div>
+        <div class="col-sm-12 text-center">
+            <div class="col-sm-offset-4">
+                <div class="col-sm-6">
+                    <a href="/category/hotel    " class="btn form-control" style="background: black;color: #fff;">More Article</a>
+                </div>
             </div>
         </div>
     </div>
