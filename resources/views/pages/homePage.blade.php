@@ -11,6 +11,8 @@
             <news></news>
             {{--Hotel--}}
             <hotel></hotel>
+            {{--Traveling--}}
+            <traveling></traveling>
         </div>
     </div>
 @endsection

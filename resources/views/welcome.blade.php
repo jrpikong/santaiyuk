@@ -109,8 +109,8 @@
                                 </div>
                             </form>
                         </li>
-                        <li class="menus"><a href="#">Recent Post</a></li>
-                        <li class="menus"><a href="#">Trending</a></li>
+                        <li class="menus"><a href="/">Home</a></li>
+                        <li class="menus"><a href="/recent-post">Recent Post</a></li>
                         <li class="menus"><a href="{{route('directory')}}">Review With Us</a></li>
                         <li class="menus"><a href="#">Videos</a></li>
                     </ul>
@@ -118,6 +118,14 @@
             </div>
         </nav>
         @yield('content')
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="menus"><a href="/">Home</a></li>
+                <li class="menus"><a href="/page/about">About Us</a></li>
+                <li class="menus"><a href="/page/advertise-with-us">Advertise With Us</a></li>
+                <li class="menus"><a href="/">Contact Us</a></li>
+            </ul>
+        </div>
     </div>
 </div>
 

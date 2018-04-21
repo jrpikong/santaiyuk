@@ -28,6 +28,8 @@ Route::get('/', 'MainController@index');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/recent-post', 'MainController@recentPost');
+Route::get('/page/{slug}', 'MainController@page');
 Route::get('/category/{slug}', 'ListArticleController@index');
 Route::get('/{slug}','Api\PostController@view');
 Route::get('/formulir/directory/', 'FormController@directoryForm')->name('directory');
