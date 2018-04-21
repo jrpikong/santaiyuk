@@ -63594,6 +63594,9 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: "post-category",
@@ -63712,7 +63715,26 @@ var render = function() {
           2
         ),
     _vm._v(" "),
-    _vm._m(0)
+    _vm._m(0),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass: "col-sm-12 col-md-12",
+        staticStyle: { "padding-top": "10px" }
+      },
+      [
+        _c("img", {
+          staticClass: "img-responsive",
+          staticStyle: {
+            height: "245px",
+            width: "100%",
+            "object-fit": "cover"
+          },
+          attrs: { src: "/img/ads/video-cover-bg-1.jpg" }
+        })
+      ]
+    )
   ])
 }
 var staticRenderFns = [
@@ -65651,12 +65673,17 @@ var render = function() {
               ])
             }),
             _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "col-sm-6 col-md-4" },
-              [_c("KeepWithUs")],
-              1
-            )
+            _c("div", { staticClass: "col-sm-6 col-md-4" }, [
+              _c("img", {
+                staticClass: "img-responsive",
+                staticStyle: {
+                  height: "345px",
+                  width: "100%",
+                  "object-fit": "cover"
+                },
+                attrs: { src: "/img/ads/room-1.jpg" }
+              })
+            ])
           ],
           2
         ),
