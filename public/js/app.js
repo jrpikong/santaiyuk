@@ -65194,7 +65194,7 @@ exports = module.exports = __webpack_require__(13)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -65220,9 +65220,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    name: "KeepWithUs"
+    name: "KeepWithUs",
+    data: function data() {
+        return {
+            email: '',
+            endpoint: 'subscribe',
+            message: false
+        };
+    },
+
+    methods: {
+        post: function post() {
+            var _this = this;
+
+            axios.post(this.endpoint, { email: this.email }).then(function (_ref) {
+                var data = _ref.data;
+
+                _this.posts = data.data;
+                _this.message = true;
+            });
+        }
+    }
 });
 
 /***/ }),
@@ -65233,24 +65254,52 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "background-gold sidebar-right-top" }, [
-      _c("h2", [
-        _vm._v("\n        Keep Up With\n        "),
-        _c("span", [_vm._v("Pergi Keliling")])
-      ]),
-      _vm._v(" "),
-      _c("form", [
+  return _c("div", { staticClass: "background-gold sidebar-right-top" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c(
+      "form",
+      {
+        attrs: { method: "post" },
+        on: {
+          submit: function($event) {
+            $event.preventDefault()
+            _vm.post($event)
+          }
+        }
+      },
+      [
         _c("div", { staticClass: "form-group" }, [
+          _vm.message
+            ? _c("div", { staticClass: "alert alert-info" }, [
+                _vm._v("Terimakasih")
+              ])
+            : _vm._e(),
+          _vm._v(" "),
           _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.email,
+                expression: "email"
+              }
+            ],
             staticClass: "form-control",
-            attrs: { type: "text", placeholder: "By Entering Your E-mail" }
+            attrs: {
+              type: "text",
+              required: "",
+              placeholder: "By Entering Your E-mail"
+            },
+            domProps: { value: _vm.email },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.email = $event.target.value
+              }
+            }
           }),
           _vm._v(" "),
           _c(
@@ -65259,7 +65308,18 @@ var staticRenderFns = [
             [_vm._v("I'm Ready")]
           )
         ])
-      ])
+      ]
+    )
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h2", [
+      _vm._v("\n        Keep Up With\n        "),
+      _c("span", [_vm._v("Pergi Keliling")])
     ])
   }
 ]

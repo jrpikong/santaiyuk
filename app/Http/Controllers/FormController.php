@@ -6,8 +6,10 @@ use App\DirectoryActivity;
 use App\DirectoryFoodDrink;
 use App\DirectoryHotel;
 use App\DirectoryProduct;
+use App\Http\Library\ApiHelper;
 use App\Http\Requests\HotelRequest;
 use App\Mail\Directory;
+use App\Subscibe;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -181,9 +183,23 @@ class FormController extends Controller
         return json_encode($filesPath);
     }
 
+
+
+
 //    private function sendEmail($email,$title)
 //    {
 //        $data = ['message' => 'Register'];
 //        Mail::to($email)->send(new Directory($data));
 //    }
+
+    public function postSubscribe(Request $request)
+    {
+        $email = $request->input('email');
+
+        Subscibe::create([
+            'email' => $email,
+        ]);
+        $data = ['message' => 'success'];
+        return ApiHelper::buildResponse(200,null,$data);
+    }
 }
