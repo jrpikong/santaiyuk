@@ -1,4 +1,4 @@
-        <h3>Isikan Formulir Direktori Hotel Dibwah Ini!</h3>
+        <h3>Isikan Formulir Direktori Hotel Di bawah ini!</h3>
         @foreach (['danger', 'warning', 'success', 'info'] as $key)
             @if(Session::has($key))
                 <p class="alert alert-{{ $key }}">{{ Session::get($key) }}</p>

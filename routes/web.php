@@ -35,3 +35,6 @@ Route::get('/{slug}','Api\PostController@view');
 Route::get('/formulir/directory/', 'FormController@directoryForm')->name('directory');
 
 Route::post('/formulir/directory/post-hotel', 'FormController@postHotel')->name('postHotel');
+Route::post('/formulir/directory/post-food-drink', 'FormController@postFoodDrink')->name('postFoodDrink');
+Route::post('/formulir/directory/post-activity', 'FormController@postActivity')->name('postActivity');
+Route::post('/formulir/directory/post-product', 'FormController@postProduct')->name('postProduct');
