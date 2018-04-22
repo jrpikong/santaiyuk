@@ -25,6 +25,9 @@
                 </div>
             </div>
         </div>
+        <div class="col-sm-12 col-md-12" style="padding-top: 10px;">
+            <img :src="'/img/ads/video-cover-bg-1.jpg'" class="img-responsive" style="height: 245px; width: 100%;object-fit: cover;">
+        </div>
     </div>
 </template>
 
