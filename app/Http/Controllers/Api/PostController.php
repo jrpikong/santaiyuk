@@ -8,12 +8,16 @@ use App\Http\Resources\PostResource;
 use App\Post;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Routing\UrlGenerator;
 class PostController extends Controller
 {
     public function getRecentPost($limit)
     {
         $post = Post::
-            orderby('created_at','DESC')
+            where(
+                'published_at','<=',date('Y-m-d H:i'))
+            ->wherein('status',['PUBLISHED'])
+            ->orderby('created_at','DESC')
             ->limit($limit)
             ->get();
         if ($post->isEmpty()) {
@@ -29,7 +33,9 @@ class PostController extends Controller
     {
         $post = Post::
             join('categories','categories.id','=','posts.category_id')
-            ->where('categories.slug',$slugcat)
+            ->where([
+                ['categories.slug'=>$slugcat],
+            ])
             ->select('posts.id','title','seo_title','excerpt','body','image','posts.slug',
                 'meta_description','meta_keywords','featured','posts.published_at','posts.created_at','author_id','category_id'
             )
@@ -82,6 +88,7 @@ class PostController extends Controller
             )
             ->first();
         $tags = $post->tags;
-        return view('pages.viewPost',compact('post','tags'));
+        $url = url()->full();
+        return view('pages.viewPost',compact('post','tags','url'));
     }
 }

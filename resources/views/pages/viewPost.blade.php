@@ -15,6 +15,9 @@
                         @endforeach
                         {{--</ul>--}}
                     </div>
+                    <div>
+                        <div class="fb-comments" data-href="{{$url}}" data-width="100%" data-numposts="5"></div>
+                    </div>
                 </div>
                 <div class="background-wite content text-center">
                     <img src="{{asset('img/image001.jpg')}}" width="100%" class="img-responsive">
