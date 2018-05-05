@@ -38,3 +38,4 @@ Route::post('/formulir/directory/post-hotel', 'FormController@postHotel')->name(
 Route::post('/formulir/directory/post-food-drink', 'FormController@postFoodDrink')->name('postFoodDrink');
 Route::post('/formulir/directory/post-activity', 'FormController@postActivity')->name('postActivity');
 Route::post('/formulir/directory/post-product', 'FormController@postProduct')->name('postProduct');
+Route::post('/subscribe', 'FormController@postSubscribe')->name('postSubscribe');
