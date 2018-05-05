@@ -6,10 +6,10 @@
             <div class="col-md-9">
                 <div class="background-wite content">
                     <ul class="nav nav-tabs nav-justified">
-                        <li class="active"><a data-toggle="pill" href="#directory-hotels">HOTELS</a></li>
-                        <li><a data-toggle="pill" href="#food-drinks">FOOD AND DRINKS</a></li>
-                        <li><a data-toggle="pill" href="#activities-travelling">ACTIVITIES & TRAVELLING</a></li>
-                        <li><a data-toggle="pill" href="#product">PODUCT</a></li>
+                        <li class="active"><a data-toggle="pill" href="#directory-hotels">AKOMODASI</a></li>
+                        <li><a data-toggle="pill" href="#food-drinks">KULINER</a></li>
+                        <li><a data-toggle="pill" href="#activities-travelling">AKTIFITAS</a></li>
+                        <li><a data-toggle="pill" href="#product">PRODUK</a></li>
                     </ul>
                     <div class="tab-content">
                         <div id="directory-hotels" class="tab-pane fade in active">
