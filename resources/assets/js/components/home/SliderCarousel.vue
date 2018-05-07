@@ -97,7 +97,6 @@
                         .then(({data}) => {
                             this.sliders = data.data
                             this.loading = true
-                            console.log(this.sliders)
                         })
                 },200)
             }

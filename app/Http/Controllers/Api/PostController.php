@@ -14,8 +14,7 @@ class PostController extends Controller
     public function getRecentPost($limit)
     {
         $post = Post::
-            where(
-                'published_at','<=',date('Y-m-d H:i'))
+            where('published_at','<=',date('Y-m-d H:i'))
             ->wherein('status',['PUBLISHED'])
             ->orderby('created_at','DESC')
             ->limit($limit)
@@ -33,12 +32,13 @@ class PostController extends Controller
     {
         $post = Post::
             join('categories','categories.id','=','posts.category_id')
-            ->where([
-                ['categories.slug'=>$slugcat],
-            ])
+            ->where('categories.slug','=',$slugcat)
+            ->where('published_at','<=',date('Y-m-d H:i'))
+            ->wherein('status',['PUBLISHED'])
             ->select('posts.id','title','seo_title','excerpt','body','image','posts.slug',
                 'meta_description','meta_keywords','featured','posts.published_at','posts.created_at','author_id','category_id'
             )
+            ->orderby('created_at','DESC')
             ->limit($limit)
             ->get();
         if ($post->isEmpty()) {

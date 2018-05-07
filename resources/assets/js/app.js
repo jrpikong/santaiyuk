@@ -8,6 +8,7 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+
 import VueAgile from 'vue-agile'
 Vue.use(VueAgile)
 
