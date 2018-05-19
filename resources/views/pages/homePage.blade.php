@@ -8,9 +8,9 @@
             {{--Recent--}}
             <recent></recent>
             {{--News--}}
-            <news></news>
+            <akomodasi></akomodasi>
             {{--Hotel--}}
-            <hotel></hotel>
+            <kuliner></kuliner>
             {{--Traveling--}}
             <traveling></traveling>
         </div>

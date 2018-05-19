@@ -2,7 +2,7 @@
     <div>
         <div v-if="loading" class="col-sm-12 text-center">Loading ... </div>
         <div v-else class="col-sm-12">
-            <h2 style="border-bottom: 2px solid #bf9b30;padding-left:15px;padding-right:15px;">Hotel</h2>
+            <h2 style="border-bottom: 2px solid #bf9b30;padding-left:15px;padding-right:15px;">Kuliner</h2>
             <div  v-for="post in posts" class="col-sm-6 col-md-4">
                 <a :href="post.slug">
                     <div class="thumbnail">
@@ -12,7 +12,7 @@
                              :src="urlRoute + post.image"
                              data-holder-rendered="true">
                         <div class="caption">
-                            <h3>{{post.title}}</h3>
+                            <h4>{{post.title}}</h4>
                         </div>
                     </div>
                 </a>
@@ -21,7 +21,7 @@
         <div class="col-sm-12 text-center">
             <div class="col-sm-offset-4">
                 <div class="col-sm-6">
-                    <a href="/category/hotel    " class="btn form-control" style="background: black;color: #fff;">More Article</a>
+                    <a href="/category/direktori-kuliner" class="btn form-control" style="background: black;color: #fff;">Artikel Selanjutnya</a>
                 </div>
             </div>
         </div>
@@ -34,7 +34,7 @@
         data() {
             return {
                 loading: true,
-                endpoint: 'api/post-category/hotel/6',
+                endpoint: 'api/post-category/direktori-kuliner/6',
                 urlRoute: '/storage/',
                 posts:[]
             }

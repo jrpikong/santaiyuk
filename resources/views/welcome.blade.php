@@ -53,7 +53,7 @@
                 <li>
                     <a href="{{ route('login') }}" class="download">
                         <i class="glyphicon glyphicon-user"></i>
-                        LOGIN
+                        MASUK
                     </a>
                 </li>
             @endguest
@@ -66,7 +66,7 @@
                        onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();" class="download">
                         <i class="glyphicon glyphicon-user"></i>
-                        LOGOUT
+                        KELUAR
                     </a>
 
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -128,15 +128,15 @@
                                            aria-describedby="basic-addon2"
                                     >
                                     <span class="input-group-btn">
-                                            <button class="btn btn-primary" type="button">Seacrh Now</button>
+                                            <button class="btn btn-primary" type="button">Cari Sekarang</button>
                                         </span>
                                 </div>
                             </form>
                         </li>
-                        <li class="menus"><a href="/">Home</a></li>
-                        <li class="menus"><a href="/recent-post">Recent Post</a></li>
-                        <li class="menus"><a href="{{route('directory')}}">Review With Us</a></li>
-                        <li class="menus"><a href="#">Videos</a></li>
+                        <li class="menus"><a href="/">Beranda</a></li>
+                        <li class="menus"><a href="/recent-post">Artikel Terbaru</a></li>
+                        <li class="menus"><a href="{{route('directory')}}">Ulasan</a></li>
+                        <li class="menus"><a href="https://www.youtube.com/channel/UCBG7OUQ4qhNeM9prXkh715Q" target="_blank">Video</a></li>
                     </ul>
                 </div>
             </div>
@@ -144,10 +144,10 @@
         @yield('content')
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li class="menus"><a href="/">Home</a></li>
-                <li class="menus"><a href="/page/about">About Us</a></li>
-                <li class="menus"><a href="/page/advertise-with-us">Advertise With Us</a></li>
-                <li class="menus"><a href="/">Contact Us</a></li>
+                <li class="menus"><a href="/">Beranda</a></li>
+                <li class="menus"><a href="/page/about">Tentang Kami</a></li>
+                <li class="menus"><a href="/page/advertise-with-us">Pemasangan Iklan</a></li>
+                <li class="menus"><a href="/">Kontak</a></li>
             </ul>
         </div>
     </div>
