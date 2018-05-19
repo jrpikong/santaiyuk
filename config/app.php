@@ -168,6 +168,7 @@ return [
          * Package Service Providers...
          */
         Cartalyst\Tags\TagsServiceProvider::class,
+        CyrildeWit\PageViewCounter\PageViewCounterServiceProvider::class,
 
         /*
          * Application Service Providers...

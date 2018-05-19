@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Api;
 use App\Http\Library\ApiHelper;
 use App\Http\Library\VoyagerHelper;
 use App\Http\Resources\PostResource;
+use App\PageView;
 use App\Post;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Routing\UrlGenerator;
@@ -83,11 +85,12 @@ class PostController extends Controller
                     $query->select('id','name','avatar');
                 }))
             ->where('slug', '=', $slug)
-            ->select('id','title','seo_title','excerpt','body','image','slug',
+            ->select('id','title','seo_title','excerpt','body','image','slug','views',
                 'meta_description','meta_keywords','featured','published_at','created_at','author_id','category_id'
             )
             ->first();
         $tags = $post->tags;
+        $post->addPageViewThatExpiresAt(Carbon::now()->addHours(24));
         $url = url()->full();
         return view('pages.viewPost',compact('post','tags','url'));
     }
