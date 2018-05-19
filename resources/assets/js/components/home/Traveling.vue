@@ -43,7 +43,7 @@
         data() {
             return {
                 loading: true,
-                endpoint: 'api/direktori-wisata/5',
+                endpoint: 'api/post-category/direktori-wisata/5',
                 urlRoute: '/storage/',
                 posts:[]
             }
