@@ -1,4 +1,4 @@
-        <h3>Isikan Formulir Direktori Hotel Dibwah Ini!</h3>
+        <h3>Isikan Formulir Aktifitas Dibwah Ini!</h3>
 
         <form class="form-horizontal" method="post" action="{{route('postActivity')}}" enctype="multipart/form-data">
             {{ csrf_field() }}
@@ -186,7 +186,7 @@
             <div class="form-group">
                 <label class="control-label col-sm-3" for="Foto">Lampirkan Foto Lokasi :</label>
                 <div class="col-sm-9">
-                    <input type="file" multiple name="img[]" id="img">
+                    <input type="file" multiple name="img[]" id="img" required>
                 </div>
             </div>
 

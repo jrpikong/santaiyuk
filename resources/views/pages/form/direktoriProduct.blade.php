@@ -1,4 +1,4 @@
-        <h3>Isikan Formulir Direktori Product Di bawah ini!</h3>
+        <h3>Isikan Formulir Produk Di bawah ini!</h3>
 
         <form class="form-horizontal" method="post" action="{{route('postProduct')}}" enctype="multipart/form-data">
             {{ csrf_field() }}
@@ -98,7 +98,7 @@
             <div class="form-group">
                 <label class="control-label col-sm-3" for="foto-produk">Foto Produk </label>
                 <div class="col-sm-9">
-                    <input type="file" multiple name="foto_produk[]" id="foto-produk">
+                    <input type="file" multiple name="foto_produk[]" id="foto-produk" required>
                 </div>
             </div>
 

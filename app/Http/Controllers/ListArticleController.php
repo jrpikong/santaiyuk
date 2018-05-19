@@ -26,10 +26,8 @@ class ListArticleController extends Controller
             ->select('id','title','seo_title','excerpt','body','image','slug',
                 'meta_description','meta_keywords','featured','published_at','created_at','author_id','category_id'
             )
+            ->orderby('created_at','DESC')
             ->get();
-//        if ($article->isEmpty()) {
-//            return ApiHelper::buildResponse(400,'Data Not Found');
-//        }
         $voyagerHelper = new VoyagerHelper();
         foreach ($article as $item) {
             $item->image = $voyagerHelper->thumbnail($item->image, 'medium');

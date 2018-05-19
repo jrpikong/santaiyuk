@@ -13,6 +13,30 @@
     <!-- Scrollbar Custom CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 
+    <link rel="apple-touch-icon" sizes="57x57" href="{{asset('img/vaficon/apple-icon-57x57.png')}}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{asset('img/vaficon/apple-icon-60x60.png')}}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{asset('img/vaficon/apple-icon-72x72.png')}}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{asset('img/vaficon/apple-icon-76x76.png')}}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{asset('img/vaficon/apple-icon-114x114.png')}}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{asset('img/vaficon/apple-icon-120x120.png')}}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{asset('img/vaficon/apple-icon-144x144.png')}}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{asset('img/vaficon/apple-icon-152x152.png')}}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('img/vaficon/apple-icon-180x180.png')}}">
+    <link rel="icon" type="image/png" sizes="192x192"  href="{{asset('img/vaficon/android-icon-192x192.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('img/vaficon/favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{asset('img/vaficon/favicon-96x96.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('img/vaficon/favicon-16x16.png')}}">
+    <link rel="manifest" href="{{asset('img/vaficon/manifest.json')}}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{{asset('img/vaficon/ms-icon-144x144.png')}}">
+    <meta name="theme-color" content="#ffffff">
+    <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v3.0&appId=397589920715820&autoLogAppEvents=1';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
 </head>
 <body>
 
@@ -29,7 +53,7 @@
                 <li>
                     <a href="{{ route('login') }}" class="download">
                         <i class="glyphicon glyphicon-user"></i>
-                        LOGIN
+                        MASUK
                     </a>
                 </li>
             @endguest
@@ -42,7 +66,7 @@
                        onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();" class="download">
                         <i class="glyphicon glyphicon-user"></i>
-                        LOGOUT
+                        KELUAR
                     </a>
 
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -104,15 +128,15 @@
                                            aria-describedby="basic-addon2"
                                     >
                                     <span class="input-group-btn">
-                                            <button class="btn btn-primary" type="button">Seacrh Now</button>
+                                            <button class="btn btn-primary" type="button">Cari Sekarang</button>
                                         </span>
                                 </div>
                             </form>
                         </li>
-                        <li class="menus"><a href="/">Home</a></li>
-                        <li class="menus"><a href="/recent-post">Recent Post</a></li>
-                        <li class="menus"><a href="{{route('directory')}}">Review With Us</a></li>
-                        <li class="menus"><a href="#">Videos</a></li>
+                        <li class="menus"><a href="/">Beranda</a></li>
+                        <li class="menus"><a href="/recent-post">Artikel Terbaru</a></li>
+                        <li class="menus"><a href="{{route('directory')}}">Ulasan</a></li>
+                        <li class="menus"><a href="https://www.youtube.com/channel/UCBG7OUQ4qhNeM9prXkh715Q" target="_blank">Video</a></li>
                     </ul>
                 </div>
             </div>
@@ -120,10 +144,10 @@
         @yield('content')
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li class="menus"><a href="/">Home</a></li>
-                <li class="menus"><a href="/page/about">About Us</a></li>
-                <li class="menus"><a href="/page/advertise-with-us">Advertise With Us</a></li>
-                <li class="menus"><a href="/">Contact Us</a></li>
+                <li class="menus"><a href="/">Beranda</a></li>
+                <li class="menus"><a href="/page/about">Tentang Kami</a></li>
+                <li class="menus"><a href="/page/advertise-with-us">Pemasangan Iklan</a></li>
+                <li class="menus"><a href="/">Kontak</a></li>
             </ul>
         </div>
     </div>

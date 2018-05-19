@@ -43,7 +43,7 @@ class PostController extends BaseVoyagerBreadController
             $query->where([
                 ['published_at','<=',date('Y-m-d H:i')]
             ]);
-            $query->wherein('status',['DRAFT','PUBLISHED']);
+            $query->wherein('status',['PUBLISHED']);
 
             $relationships = $this->getRelationships($dataType);
 
@@ -129,9 +129,9 @@ class PostController extends BaseVoyagerBreadController
                 $query->where('author_id', '=', Auth::user()->id);
             }
             $query->where([
-                ['status','=','PENDING']
+                ['published_at','>=',date('Y-m-d H:i')]
             ]);
-
+            $query->orwherein('status',['DRAFT','PENDING']);
             $relationships = $this->getRelationships($dataType);
 
             // If a column has a relationship associated with it, we do not want to show that field

@@ -1,4 +1,4 @@
-        <h3>Isikan Formulir Direktori Food And Drink Di bawah ini!</h3>
+        <h3>Isikan Formulir Kuliner Di bawah ini!</h3>
 
         <form class="form-horizontal" method="post" action="{{route('postFoodDrink')}}" enctype="multipart/form-data">
             {{ csrf_field() }}

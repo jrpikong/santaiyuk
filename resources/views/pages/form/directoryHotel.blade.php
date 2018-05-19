@@ -1,4 +1,4 @@
-        <h3>Isikan Formulir Direktori Hotel Di bawah ini!</h3>
+        <h3>Isikan Formulir Akomodasi Di bawah ini!</h3>
         @foreach (['danger', 'warning', 'success', 'info'] as $key)
             @if(Session::has($key))
                 <p class="alert alert-{{ $key }}">{{ Session::get($key) }}</p>
@@ -230,7 +230,7 @@
             <div class="form-group{{ $errors->has('img') ? ' has-error' : '' }}">
                 <label class="control-label col-sm-3" for="Foto">Foto :</label>
                 <div class="col-sm-9">
-                    <input type="file" multiple name="img[]" id="img">
+                    <input type="file" multiple name="img[]" id="img" required>
                     @if ($errors->has('img'))
                         <span class="help-block">
                             <strong>{{ $errors->first('img') }}</strong>

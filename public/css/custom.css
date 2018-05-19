@@ -250,7 +250,7 @@ a.article, a.article:hover {
     background-color: #fff;
 }
 .thumbnail .caption{
-    height: 145px;
+    height: 110px;
 }
 .carousel-indicators .active {
     background-color: #000;
