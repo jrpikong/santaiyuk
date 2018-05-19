@@ -85,7 +85,7 @@ class PostController extends Controller
                     $query->select('id','name','avatar');
                 }))
             ->where('slug', '=', $slug)
-            ->select('id','title','seo_title','excerpt','body','image','slug','views',
+            ->select('id','title','seo_title','excerpt','body','image','slug',
                 'meta_description','meta_keywords','featured','published_at','created_at','author_id','category_id'
             )
             ->first();
