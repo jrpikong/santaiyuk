@@ -154,7 +154,7 @@ return [
                 'classes'    => 'class-full-of-rum',
                 'icon_class' => 'voyager-person',
             ],
-            'Home' => [
+            'View Web' => [
                 'route'        => '/',
                 'icon_class'   => 'voyager-home',
                 'target_blank' => true,
@@ -169,6 +169,9 @@ return [
             'TCG\\Voyager\\Widgets\\UserDimmer',
             'TCG\\Voyager\\Widgets\\PostDimmer',
             'TCG\\Voyager\\Widgets\\PageDimmer',
+            'App\\Widgets\\TotalViewThisWeek',
+            'App\\Widgets\\TotalViewThisMonth',
+            'App\\Widgets\\TotalViewToDay'
         ],
 
     ],

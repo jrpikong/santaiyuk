@@ -25,8 +25,7 @@ class ListArticleController extends Controller
             }))
             ->select('id','title','seo_title','excerpt','body','image','slug',
                 'meta_description','meta_keywords','featured','published_at','created_at','author_id','category_id'
-            )
-            ->orderby('created_at','DESC')
+            )->orderby('created_at','DESC')
             ->get();
         $voyagerHelper = new VoyagerHelper();
         foreach ($article as $item) {
