@@ -41,7 +41,6 @@ class PostController extends VoyagerBaseController
 
         // GET THE DataType based on the slug
         $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
-
         // Check permission
         $this->authorize('browse', app($dataType->model_name));
 
@@ -57,7 +56,7 @@ class PostController extends VoyagerBaseController
             $relationships = $this->getRelationships($dataType);
 
             $model = app($dataType->model_name);
-            $query = $model::select('*')->with($relationships);
+            $query = Post::select('*')->with($relationships);
 
             // If a column has a relationship associated with it, we do not want to show that field
             $this->removeRelationshipField($dataType, 'browse');
@@ -76,6 +75,7 @@ class PostController extends VoyagerBaseController
                 ]);
             } elseif ($model->timestamps) {
                 $dataTypeContent = call_user_func([$query->latest($model::CREATED_AT), $getter]);
+                $dataTypeContent = $dataTypeContent->sortBy('page_views');
             } else {
                 $dataTypeContent = call_user_func([$query->orderBy($model->getKeyName(), 'DESC'), $getter]);
             }
@@ -87,7 +87,6 @@ class PostController extends VoyagerBaseController
             $dataTypeContent = call_user_func([DB::table($dataType->name), $getter]);
             $model = false;
         }
-
         // Check if BREAD is Translatable
         if (($isModelTranslatable = is_bread_translatable($model))) {
             $dataTypeContent->load('translations');
@@ -95,7 +94,7 @@ class PostController extends VoyagerBaseController
 
         // Check if server side pagination is enabled
         $isServerSide = isset($dataType->server_side) && $dataType->server_side;
-
+//        dd($dataTypeContent);
         $view = 'voyager::bread.browse';
 
         if (view()->exists("voyager::$slug.browse")) {
@@ -307,9 +306,11 @@ class PostController extends VoyagerBaseController
         }
 
         if (!$request->has('_validate')) {
-            $data = $this->insertUpdateData($request, $slug, $dataType->addRows, new $dataType->model_name());
+            if (!$request->ajax()) {
+                $data = $this->insertUpdateData($request, $slug, $dataType->addRows, new $dataType->model_name());
 
-            event(new BreadDataAdded($dataType, $data));
+                event(new BreadDataAdded($dataType, $data));
+            }
 
             if ($request->ajax()) {
                 return response()->json(['success' => true, 'data' => $data]);
