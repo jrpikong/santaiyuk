@@ -11,7 +11,7 @@
                              :src="urlRoute + post.image"
                              data-holder-rendered="true">
                         <div class="caption">
-                            <h3>{{post.title}}</h3>
+                            <h4>{{post.title}}</h4>
                         </div>
                     </div>
                 </a>

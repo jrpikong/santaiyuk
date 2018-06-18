@@ -14,11 +14,12 @@
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 
-    Route::post('/posts',['uses' => 'Admin\PostController@store', 'as' => 'voyager.posts.store']);
-    Route::get('/posts',['uses' => 'Admin\PostController@index', 'as' => 'voyager.posts.index']);
-    Route::get('/post-pandding',['uses' => 'Admin\PostController@padding']);
-    Route::get('/posts/{post}/edit',['uses' => 'Admin\PostController@edit', 'as' => 'voyager.posts.edit']);
-    Route::put('/posts/{post}','Admin\PostController@update')->name('voyager.posts.update');
+    Route::post('/posts',['uses' => 'Voyager\PostController@store', 'as' => 'voyager.posts.store']);
+    Route::get('/posts',['uses' => 'Voyager\PostController@index', 'as' => 'voyager.posts.index']);
+    Route::get('/postdata/pending',['uses' => 'Voyager\PostController@pending']);
+    Route::get('/posts/{post}/edit',['uses' => 'Voyager\PostController@edit', 'as' => 'voyager.posts.edit']);
+//    Route::get('/topviewers',['uses' => 'Admin\PostController@topviews']);
+    Route::put('/posts/{post}','Voyager\PostController@update')->name('voyager.posts.update');
 });
 
 Auth::routes();
