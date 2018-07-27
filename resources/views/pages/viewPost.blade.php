@@ -20,7 +20,7 @@
                     </div>
                 </div>
                 <div class="background-wite content text-center">
-                    <img src="{{asset('img/image001.jpg')}}" width="100%" class="img-responsive">
+                    <img src="{{asset('img/ads/web-banner-pergikeliling.jpg')}}" width="100%" class="img-responsive">
                 </div>
             </div>
 
