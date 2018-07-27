@@ -22,6 +22,9 @@
                     </div>
                 @endforeach
             @endif
+                <div class="background-wite content text-center">
+                    <img src="{{asset('img/ads/web-banner-pergikeliling.jpg')}}" width="100%" class="img-responsive">
+                </div>
         </div>
     </div>
 @endsection

@@ -18,7 +18,7 @@
                 </a>
             </div>
             <div class="col-sm-6 col-md-4">
-                <img :src="'/img/ads/room-1.jpg'" class="img-responsive" style="height: 345px; width: 100%;object-fit: cover;">
+                <img :src="'/img/ads/bali.jpeg'" class="img-responsive" style="height: 345px; width: 100%;object-fit: cover;">
             </div>
         </div>
         <div class="col-sm-12 text-center">
