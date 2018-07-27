@@ -56,7 +56,7 @@ class PostController extends VoyagerBaseController
             $relationships = $this->getRelationships($dataType);
 
             $model = app($dataType->model_name);
-            $query = Post::select('*')->with($relationships);
+            $query = $model::select('*')->with($relationships);
 
             // If a column has a relationship associated with it, we do not want to show that field
             $this->removeRelationshipField($dataType, 'browse');
