@@ -45,7 +45,7 @@
     <!-- Sidebar Holder -->
     <nav id="sidebar">
         <div class="sidebar-header">
-            <img src="{{asset('img/general/main-logo.png')}}" class="main-logo" height="200">
+            <img src="{{asset('img/general/old-main-logo.png')}}" class="main-logo" height="200">
         </div>
 
         <ul class="list-unstyled CTAs">
