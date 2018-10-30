@@ -1,5 +1,11 @@
 <template>
     <div>
+	<div class="col-sm-12 col-md-12" style="padding-top: 10px;">
+         <a href="https://www.alanahotels.com/en/hotel/view/5/the-alana-hotel---conference-center---sentul-city" target="_blank">
+            <img :src="'/img/ads/web-banner-pergikeliling.jpg'" class="img-responsive" style="width: 100%;">
+          </a>
+        </div>
+
         <div v-if="loading" class="col-sm-12 text-center">Loading ... </div>
         <div v-else class="col-sm-12">
             <h2 style="border-bottom: 2px solid #bf9b30;padding-left:15px;padding-right:15px;">Artikel Terbaru</h2>

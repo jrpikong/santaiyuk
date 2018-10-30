@@ -4,6 +4,11 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-9">
+		<div class="background-wite content text-center">
+                        <a href ="https://www.alanahotels.com/en/hotel/view/5/the-alana-hotel---conference-center---sentul-city" target="_blank">
+                            <img src="{{asset('img/ads/web-banner-pergikeliling.jpg')}}" width="100%" class="img-responsive">
+                        </a>
+                </div>
                 <div class="background-wite content">
                     <h3>{{$post->title}}</h3>
                     <img src="{{asset('storage/'.$post->image)}}" class="responsive image-view-post">
@@ -20,7 +25,9 @@
                     </div>
                 </div>
                 <div class="background-wite content text-center">
-                    <img src="{{asset('img/ads/web-banner-pergikeliling.jpg')}}" width="100%" class="img-responsive">
+			<a href ="https://www.alanahotels.com/en/hotel/view/5/the-alana-hotel---conference-center---sentul-city" target="_blank">
+	                    <img src="{{asset('img/ads/web-banner-pergikeliling.jpg')}}" width="100%" class="img-responsive">
+			</a>
                 </div>
             </div>
 

@@ -1,22 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: jrpikong
- * Date: 19/05/18
- * Time: 03:08
- */
-
 
 namespace App\Widgets;
 
-use App\PageView;
-use App\Post;
 use Arrilot\Widgets\AbstractWidget;
-use Carbon\Carbon;
 use Illuminate\Support\Str;
 use TCG\Voyager\Facades\Voyager;
 
-class TotalViewToDay extends AbstractWidget
+class UserDimmer extends AbstractWidget
 {
     /**
      * The configuration array.
@@ -31,20 +21,18 @@ class TotalViewToDay extends AbstractWidget
      */
     public function run()
     {
-        $date = Carbon::today();
-        $articles = PageView::all()->where('created_at','>=',$date)->count();
-        $count = $articles;
-        $string = "Total View Hari Ini";
+        $count = Voyager::model('User')->count();
+        $string = trans_choice('voyager::dimmer.user', $count);
 
         return view('voyager::dimmer', array_merge($this->config, [
-            'icon'   => 'voyager-ship',
+            'icon'   => 'voyager-group',
             'title'  => "{$count} {$string}",
-            'text'   => 'Total Semua Viewers Artikel Hari Ini Pada Website <br>Pergikeliling.com',
+            'text'   => __('voyager::dimmer.user_text', ['count' => $count, 'string' => Str::lower($string)]),
             'button' => [
-                'text' => 'View All Posts',
-                'link' => route('voyager.posts.index'),
+                'text' => __('voyager::dimmer.user_link_text'),
+                'link' => route('voyager.users.index'),
             ],
-            'image' => voyager_asset('images/compass/documentation.jpg'),
+            'image' => voyager_asset('images/widget-backgrounds/01.jpg'),
         ]));
     }
 

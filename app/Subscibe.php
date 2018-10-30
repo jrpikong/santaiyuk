@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Subscibe extends Model
 {
-    protected $fillable = ['email'];
+    protected $fillable = ['email','name','phone_number'];
 }

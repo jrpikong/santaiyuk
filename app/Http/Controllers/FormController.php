@@ -195,9 +195,13 @@ class FormController extends Controller
     public function postSubscribe(Request $request)
     {
         $email = $request->input('email');
+        $name = $request->input('name');
+        $phone_number = $request->input('phone_number');
 
         Subscibe::create([
             'email' => $email,
+            'name' => $name,
+            'phone_number' => $phone_number,
         ]);
         $data = ['message' => 'success'];
         return ApiHelper::buildResponse(200,null,$data);
