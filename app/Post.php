@@ -31,7 +31,7 @@ class Post extends Model implements TaggableInterface
             $this->author_id = Auth::user()->id;
         }
 
-        parent::save();pospos
+        parent::save();
     }
 
     public function authorId()
