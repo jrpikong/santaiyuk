@@ -21,6 +21,7 @@
     "dependencies": {
         "bootstrap-vue": "^2.0.0-rc.8",
         "font-awesome": "^4.7.0",
+        "imagemin-pngquant": "5.0.1",
         "vue-agile": "^0.3.7"
     }
 }
