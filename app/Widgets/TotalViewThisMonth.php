@@ -47,4 +47,14 @@ class TotalViewThisMonth extends AbstractWidget
             'image' => voyager_asset('images/compass/documentation.jpg'),
         ]));
     }
+
+    public function getRelatedModel()
+    {
+        return Voyager::model('User');
+    }
+
+    public function isAccessible()
+    {
+        return \Auth::user()->can('browse', Voyager::model('User'));
+    }
 }

@@ -2,7 +2,7 @@
     <agile v-if="loading" :options="options" placeholder="loading">
         <div :class="'slide slide--'+index" v-for="(slider,index) in sliders" :style="{'background-image': 'url('+ urlRoute + slider.image +')'}">
             <div class="carousel-caption">
-                <h3>{{slider.title}}</h3>
+                <h3><a v-bind:href="slider.url"> {{slider.title}}</a></h3>
                 <p class="hidden-xs">{{slider.captions}}</p>
             </div>
         </div>

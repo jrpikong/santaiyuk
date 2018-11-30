@@ -30,6 +30,8 @@ class TotalViewThisWeek extends AbstractWidget
      */
     public function run()
     {
+        $canViewPost = Voyager::can('browse_admin');
+//        dd($canViewPost);
         $fromDate = new Carbon('last week');
         $toDate = new Carbon('now');
         $articles = PageView::whereBetween('created_at', array($fromDate->toDateTimeString(), $toDate->toDateTimeString()) )->get()->count();
@@ -46,5 +48,15 @@ class TotalViewThisWeek extends AbstractWidget
             ],
             'image' => voyager_asset('images/compass/voyager-home.jpg'),
         ]));
+    }
+
+    public function getRelatedModel()
+    {
+        return Voyager::model('User');
+    }
+
+    public function isAccessible()
+    {
+        return \Auth::user()->can('browse', Voyager::model('User'));
     }
 }

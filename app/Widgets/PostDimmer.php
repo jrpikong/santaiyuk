@@ -1,6 +1,7 @@
 <?php
 
-namespace TCG\Voyager\Widgets;
+namespace App\Widgets;
+
 
 use Arrilot\Widgets\AbstractWidget;
 use Illuminate\Support\Str;
@@ -21,7 +22,9 @@ class PostDimmer extends AbstractWidget
      */
     public function run()
     {
-        $count = Voyager::model('Post')->count();
+        $id = \Auth::user()->id;
+        $count = Voyager::model('Post')->where('author_id',$id)->count();
+
         $string = trans_choice('voyager::dimmer.post', $count);
 
         return view('voyager::dimmer', array_merge($this->config, [
@@ -34,5 +37,16 @@ class PostDimmer extends AbstractWidget
             ],
             'image' => voyager_asset('images/widget-backgrounds/02.jpg'),
         ]));
+    }
+
+    public function getRelatedModel()
+    {
+        return Voyager::model('Post');
+    }
+
+    public function isAccessible()
+    {
+        return Voyager::can('browse_posts');
+
     }
 }

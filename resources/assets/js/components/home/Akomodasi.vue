@@ -26,7 +26,9 @@
             </div>
         </div>
         <div class="col-sm-12 col-md-12" style="padding-top: 10px;">
+	 <a href="https://www.alanahotels.com/en/hotel/view/5/the-alana-hotel---conference-center---sentul-city" target="_blank">
             <img :src="'/img/ads/web-banner-pergikeliling.jpg'" class="img-responsive" style="width: 100%;">
+	  </a>
         </div>
     </div>
 </template>

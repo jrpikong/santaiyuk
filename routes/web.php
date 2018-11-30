@@ -34,6 +34,8 @@ Route::get('/page/{slug}', 'MainController@page');
 Route::get('/category/{slug}', 'ListArticleController@index');
 Route::get('/{slug}','Api\PostController@view');
 Route::get('/formulir/directory/', 'FormController@directoryForm')->name('directory');
+Route::get('/post/cari','ListArticleController@search')->name('search');
+
 
 Route::post('/formulir/directory/post-hotel', 'FormController@postHotel')->name('postHotel');
 Route::post('/formulir/directory/post-food-drink', 'FormController@postFoodDrink')->name('postFoodDrink');

@@ -1,6 +1,6 @@
 <?php
 
-namespace TCG\Voyager\Widgets;
+namespace App\Widgets;
 
 use Arrilot\Widgets\AbstractWidget;
 use Illuminate\Support\Str;
@@ -34,5 +34,15 @@ class UserDimmer extends AbstractWidget
             ],
             'image' => voyager_asset('images/widget-backgrounds/01.jpg'),
         ]));
+    }
+
+    public function getRelatedModel()
+    {
+        return Voyager::model('User');
+    }
+
+    public function isAccessible()
+    {
+        return \Auth::user()->can('browse', Voyager::model('User'));
     }
 }

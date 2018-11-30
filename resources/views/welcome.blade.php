@@ -121,14 +121,15 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <form class="bs-example bs-example-form navbar-btn" data-example-id="simple-input-groups">
+                            <form class="bs-example bs-example-form navbar-btn" data-example-id="simple-input-groups" method="get" action="{{route('search')}}">
                                 <div class="input-group">
                                     <input class="form-control search-for-help"
                                            placeholder="type here"
                                            aria-describedby="basic-addon2"
+                                           name="keywords"
                                     >
                                     <span class="input-group-btn">
-                                            <button class="btn btn-primary" type="button">Cari Sekarang</button>
+                                            <button class="btn btn-primary" type="submit">Cari Sekarang</button>
                                         </span>
                                 </div>
                             </form>
