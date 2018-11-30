@@ -64138,7 +64138,7 @@ var render = function() {
             [
               _c("div", { staticClass: "carousel-caption" }, [
                 _c("h3", [
-                  _c("a", { attrs: { href: slider.url } }, [
+                  _c("a", { attrs: { href: "#" } }, [
                     _vm._v(" " + _vm._s(slider.title))
                   ])
                 ]),
@@ -64582,18 +64582,12 @@ var render = function() {
       [
         _c(
           "a",
-          {
-            attrs: {
-              href:
-                "https://www.alanahotels.com/en/hotel/view/5/the-alana-hotel---conference-center---sentul-city",
-              target: "_blank"
-            }
-          },
+          { attrs: { href: "https://goo.gl/kKMCrs", target: "_blank" } },
           [
             _c("img", {
               staticClass: "img-responsive",
               staticStyle: { width: "100%" },
-              attrs: { src: "/img/ads/web-banner-pergikeliling.jpg" }
+              attrs: { src: "/img/ads/singgasana_delian.jpg" }
             })
           ]
         )
