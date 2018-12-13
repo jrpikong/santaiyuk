@@ -141,6 +141,7 @@
                                 <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
                             </div>
                         </div>
+
                         <div class="panel-body">
                             @php
                                 $dataTypeRows = $dataType->{(isset($dataTypeContent->id) ? 'editRows' : 'addRows' )};
@@ -150,7 +151,7 @@
                             @foreach($dataTypeRows as $row)
                                 @if(!in_array($row->field, $exclude))
                                     @php
-                                        $options = json_decode($row->details);
+                                        $options = $row->details;
                                         $display_options = isset($options->display) ? $options->display : NULL;
                                     @endphp
                                     @if ($options && isset($options->formfields_custom))
