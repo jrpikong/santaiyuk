@@ -20,7 +20,7 @@ use TCG\Voyager\Events\BreadImagesDeleted;
 use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Http\Controllers\Traits\BreadRelationshipParser;
 
-class PostController extends VoyagerBaseController
+class PostController extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
 {
     //***************************************
     //               ____
@@ -41,6 +41,7 @@ class PostController extends VoyagerBaseController
 
         // GET THE DataType based on the slug
         $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
+
         // Check permission
         $this->authorize('browse', app($dataType->model_name));
 
@@ -55,7 +56,7 @@ class PostController extends VoyagerBaseController
         if (strlen($dataType->model_name) != 0) {
             $relationships = $this->getRelationships($dataType);
 
-            $model = app($dataType->model_name);
+            $model = new Post();
             $query = $model::select('*')->with($relationships);
 
             // If a column has a relationship associated with it, we do not want to show that field
@@ -75,10 +76,11 @@ class PostController extends VoyagerBaseController
                 ]);
             } elseif ($model->timestamps) {
                 $dataTypeContent = call_user_func([$query->latest($model::CREATED_AT), $getter]);
-                $dataTypeContent = $dataTypeContent->sortBy('page_views');
+//                $dataTypeContent = $dataTypeContent->sortBy('page_views');
             } else {
                 $dataTypeContent = call_user_func([$query->orderBy($model->getKeyName(), 'DESC'), $getter]);
             }
+
 
             // Replace relationships' keys for labels and create READ links if a slug is provided.
             $dataTypeContent = $this->resolveRelations($dataTypeContent, $dataType);
@@ -87,6 +89,7 @@ class PostController extends VoyagerBaseController
             $dataTypeContent = call_user_func([DB::table($dataType->name), $getter]);
             $model = false;
         }
+
         // Check if BREAD is Translatable
         if (($isModelTranslatable = is_bread_translatable($model))) {
             $dataTypeContent->load('translations');
@@ -94,7 +97,7 @@ class PostController extends VoyagerBaseController
 
         // Check if server side pagination is enabled
         $isServerSide = isset($dataType->server_side) && $dataType->server_side;
-//        dd($dataTypeContent);
+
         $view = 'voyager::bread.browse';
 
         if (view()->exists("voyager::$slug.browse")) {
@@ -112,7 +115,7 @@ class PostController extends VoyagerBaseController
             'isServerSide'
         ));
     }
-
+    //$dataTypeContent = $dataTypeContent->sortBy('page_views');
     public function pending(Request $request)
     {
         // GET THE SLUG, ex. 'posts', 'pages', etc.
@@ -222,9 +225,12 @@ class PostController extends VoyagerBaseController
             ? app($dataType->model_name)->with($relationships)->findOrFail($id)
             : DB::table($dataType->name)->where('id', $id)->first(); // If Model doest exist, get data from table name
 
+//        foreach ($dataType->editRows as $key => $row) {
+//            $details = json_decode($row->details);
+//            $dataType->editRows[$key]['col_width'] = isset($details->width) ? $details->width : 100;
+//        }
         foreach ($dataType->editRows as $key => $row) {
-            $details = json_decode($row->details);
-            $dataType->editRows[$key]['col_width'] = isset($details->width) ? $details->width : 100;
+            $dataType->editRows[$key]['col_width'] = isset($row->details->width) ? $row->details->width : 100;
         }
 
         // If a column has a relationship associated with it, we do not want to show that field
